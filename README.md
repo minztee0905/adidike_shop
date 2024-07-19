@@ -1,2 +1,0 @@
-# adidike_shop
-shoes
