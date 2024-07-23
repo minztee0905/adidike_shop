@@ -235,7 +235,6 @@ namespace adidike_shop
             i = dataGridView1.CurrentRow.Index;
             id.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
             tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
-            tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
             hang.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
             nhasx.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
             theloai.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();

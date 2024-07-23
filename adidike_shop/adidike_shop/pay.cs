@@ -9,14 +9,14 @@ namespace thanhtoan
     {
         SqlConnection conn;
         SqlCommand cmd;
-        string str = @"Data Source=MINH-TRIET\\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
+        string str = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
         SqlDataAdapter adt = new SqlDataAdapter();
         DataTable tb =  new DataTable();
         void loaddata()
         
             {
                 cmd = conn.CreateCommand(); 
-                cmd.CommandText = "Truy Van"; ;
+                cmd.CommandText = "select * from payment"; 
                 adt.SelectCommand = cmd; 
                 tb.Clear();
                 adt.Fill(tb);
