@@ -7,11 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace adidike_shop
 {
     public partial class product : Form
     {
+        SqlConnection connection;
+        SqlCommand command;
+        string str = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        DataTable table = new DataTable();
+
+        void loaddata()
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "select * from product";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+        }
         public product()
         {
             InitializeComponent();
@@ -33,7 +49,9 @@ namespace adidike_shop
 
         private void product_Load(object sender, EventArgs e)
         {
-
+            connection = new SqlConnection(str);
+            connection.Open();
+            loaddata();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -53,7 +71,7 @@ namespace adidike_shop
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string inputText = textBox1.Text;
+            string inputText = giaban.Text;
 
             string numericText = new string(inputText.Where(char.IsDigit).ToArray());
 
@@ -61,18 +79,18 @@ namespace adidike_shop
             {
                 string formattedText = number.ToString("N0");
 
-                textBox1.TextChanged -= textBox1_TextChanged;
+                giaban.TextChanged -= textBox1_TextChanged;
 
-                textBox1.Text = formattedText;
-                textBox1.SelectionStart = formattedText.Length;
+                giaban.Text = formattedText;
+                giaban.SelectionStart = formattedText.Length;
 
-                textBox1.TextChanged += textBox1_TextChanged;
+                giaban.TextChanged += textBox1_TextChanged;
             }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string inputText = textBox2.Text;
+            string inputText = gianhap.Text;
 
             string numericText = new string(inputText.Where(char.IsDigit).ToArray());
 
@@ -80,19 +98,19 @@ namespace adidike_shop
             {
                 string formattedText = number.ToString("N0");
 
-                textBox2.TextChanged -= textBox2_TextChanged;
+                gianhap.TextChanged -= textBox2_TextChanged;
 
-                textBox2.Text = formattedText;
-                textBox2.SelectionStart = formattedText.Length;
+                gianhap.Text = formattedText;
+                gianhap.SelectionStart = formattedText.Length;
 
-                textBox2.TextChanged += textBox2_TextChanged;
+                gianhap.TextChanged += textBox2_TextChanged;
             }
         }
 
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            string inputText = textBox3.Text;
+            string inputText = soluong.Text;
 
             string numericText = new string(inputText.Where(char.IsDigit).ToArray());
 
@@ -100,12 +118,12 @@ namespace adidike_shop
             {
                 string formattedText = number.ToString("N0");
 
-                textBox3.TextChanged -= textBox3_TextChanged;
+                soluong.TextChanged -= textBox3_TextChanged;
 
-                textBox3.Text = formattedText;
-                textBox3.SelectionStart = formattedText.Length;
+                soluong.Text = formattedText;
+                soluong.SelectionStart = formattedText.Length;
 
-                textBox3.TextChanged += textBox3_TextChanged;
+                soluong.TextChanged += textBox3_TextChanged;
             }
         }
 
@@ -171,7 +189,7 @@ namespace adidike_shop
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox6.Height = 30;
+            nhasx.Height = 30;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -217,6 +235,42 @@ namespace adidike_shop
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dataGridView1.CurrentRow.Index;
+            tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
+            tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
+            hang.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
+            nhasx.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
+            theloai.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
+            mau.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
+            kichthuoc.Text = dataGridView1.Rows[i].Cells[6].Value.ToString();
+            chatlieu.Text = dataGridView1.Rows[i].Cells[7].Value.ToString();
+            gianhap.Text = dataGridView1.Rows[i].Cells[8].Value.ToString();
+            giaban.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
+            soluong.Text = dataGridView1.Rows[i].Cells[10].Value.ToString();
+        }
+
+        private void them_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "insert into product values('" + tensp.Text + "',N'" + hang.Text + "','" + nhasx.Text + "','" + theloai.Text + "','" + mau.Text + "'" +
+                ",'" + kichthuoc.Text + "','" + chatlieu.Text + "','" + gianhap.Text + "','" + giaban.Text + "','" + soluong.Text + "')";
+            command.ExecuteNonQuery();
+            loaddata();
         }
     }
 }

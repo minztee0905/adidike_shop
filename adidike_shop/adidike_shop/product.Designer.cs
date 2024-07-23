@@ -29,30 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(product));
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "01",
-            "Air force 1",
-            "Nike",
-            "Vina Shoes",
-            "Giày thể thao",
-            "Trắng",
-            "38",
-            "Leather",
-            "1.500.000",
-            "2.000.000",
-            "23"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            "02",
-            "Jordan 1 low",
-            "Nike",
-            "Pou Chen",
-            "Giày thể thao",
-            "Đen",
-            "39",
-            "Leather",
-            "3.500.000",
-            "4.200.000",
-            "9"}, -1);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,36 +39,23 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.mau = new System.Windows.Forms.ComboBox();
+            this.hang = new System.Windows.Forms.ComboBox();
+            this.chatlieu = new System.Windows.Forms.ComboBox();
+            this.giaban = new System.Windows.Forms.TextBox();
+            this.gianhap = new System.Windows.Forms.TextBox();
+            this.soluong = new System.Windows.Forms.TextBox();
+            this.kichthuoc = new System.Windows.Forms.ComboBox();
+            this.theloai = new System.Windows.Forms.ComboBox();
+            this.nhasx = new System.Windows.Forms.ComboBox();
+            this.tensp = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.lammoianh = new System.Windows.Forms.Button();
+            this.xoa = new System.Windows.Forms.Button();
+            this.sua = new System.Windows.Forms.Button();
+            this.them = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -105,8 +68,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.lammoidgv = new System.Windows.Forms.Button();
+            this.loc = new System.Windows.Forms.Button();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -123,22 +86,26 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 41);
+            this.label1.Size = new System.Drawing.Size(100, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên sản phẩm";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -146,9 +113,9 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 41);
+            this.label2.Location = new System.Drawing.Point(3, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 41);
+            this.label2.Size = new System.Drawing.Size(100, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "Hãng";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -156,9 +123,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 82);
+            this.label3.Location = new System.Drawing.Point(3, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 41);
+            this.label3.Size = new System.Drawing.Size(100, 37);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nhà sản xuất";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -166,9 +133,9 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 246);
+            this.label5.Location = new System.Drawing.Point(3, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 41);
+            this.label5.Size = new System.Drawing.Size(100, 37);
             this.label5.TabIndex = 7;
             this.label5.Text = "Chất liệu";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -176,9 +143,9 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 205);
+            this.label6.Location = new System.Drawing.Point(3, 222);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 41);
+            this.label6.Size = new System.Drawing.Size(100, 37);
             this.label6.TabIndex = 6;
             this.label6.Text = "Kích thước";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -186,9 +153,9 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 164);
+            this.label7.Location = new System.Drawing.Point(3, 185);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 41);
+            this.label7.Size = new System.Drawing.Size(86, 37);
             this.label7.TabIndex = 5;
             this.label7.Text = "Màu";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -196,9 +163,9 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 123);
+            this.label8.Location = new System.Drawing.Point(3, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 41);
+            this.label8.Size = new System.Drawing.Size(100, 37);
             this.label8.TabIndex = 4;
             this.label8.Text = "Thể loại";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -206,9 +173,9 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 369);
+            this.label10.Location = new System.Drawing.Point(3, 370);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 41);
+            this.label10.Size = new System.Drawing.Size(100, 37);
             this.label10.TabIndex = 10;
             this.label10.Text = "Số lượng";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -216,9 +183,9 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 328);
+            this.label11.Location = new System.Drawing.Point(3, 333);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 41);
+            this.label11.Size = new System.Drawing.Size(100, 37);
             this.label11.TabIndex = 9;
             this.label11.Text = "Giá bán";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -226,17 +193,17 @@
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 287);
+            this.label12.Location = new System.Drawing.Point(3, 296);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 41);
+            this.label12.Size = new System.Drawing.Size(100, 37);
             this.label12.TabIndex = 8;
             this.label12.Text = "Giá nhập";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // comboBox1
+            // mau
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.mau.FormattingEnabled = true;
+            this.mau.Items.AddRange(new object[] {
             "Đen",
             "Trắng",
             "Xám",
@@ -267,16 +234,16 @@
             "Cam neon",
             "Vàng neon",
             "Xanh navy nhạt"});
-            this.comboBox1.Location = new System.Drawing.Point(111, 167);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 25);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.mau.Location = new System.Drawing.Point(109, 188);
+            this.mau.Name = "mau";
+            this.mau.Size = new System.Drawing.Size(144, 25);
+            this.mau.TabIndex = 11;
+            this.mau.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // hang
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.hang.FormattingEnabled = true;
+            this.hang.Items.AddRange(new object[] {
             "Nike, Inc",
             "Adidas AG",
             "Puma SE",
@@ -286,16 +253,16 @@
             "Crocs, Inc",
             "Kering Group",
             "Prada S.p.A"});
-            this.comboBox2.Location = new System.Drawing.Point(111, 44);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(144, 25);
-            this.comboBox2.TabIndex = 12;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.hang.Location = new System.Drawing.Point(109, 77);
+            this.hang.Name = "hang";
+            this.hang.Size = new System.Drawing.Size(144, 25);
+            this.hang.TabIndex = 12;
+            this.hang.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox3
+            // chatlieu
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.chatlieu.FormattingEnabled = true;
+            this.chatlieu.Items.AddRange(new object[] {
             "Flyknit",
             "Mesh",
             "EVA",
@@ -310,40 +277,40 @@
             "Fresh Foam",
             "Rubber",
             "Canvas"});
-            this.comboBox3.Location = new System.Drawing.Point(111, 249);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(144, 25);
-            this.comboBox3.TabIndex = 13;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.chatlieu.Location = new System.Drawing.Point(109, 262);
+            this.chatlieu.Name = "chatlieu";
+            this.chatlieu.Size = new System.Drawing.Size(144, 25);
+            this.chatlieu.TabIndex = 13;
+            this.chatlieu.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // textBox1
+            // giaban
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 331);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 25);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.giaban.Location = new System.Drawing.Point(109, 336);
+            this.giaban.Name = "giaban";
+            this.giaban.Size = new System.Drawing.Size(144, 25);
+            this.giaban.TabIndex = 14;
+            this.giaban.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // gianhap
             // 
-            this.textBox2.Location = new System.Drawing.Point(111, 290);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 25);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.gianhap.Location = new System.Drawing.Point(109, 299);
+            this.gianhap.Name = "gianhap";
+            this.gianhap.Size = new System.Drawing.Size(144, 25);
+            this.gianhap.TabIndex = 15;
+            this.gianhap.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // soluong
             // 
-            this.textBox3.Location = new System.Drawing.Point(111, 372);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 25);
-            this.textBox3.TabIndex = 16;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.soluong.Location = new System.Drawing.Point(109, 373);
+            this.soluong.Name = "soluong";
+            this.soluong.Size = new System.Drawing.Size(144, 25);
+            this.soluong.TabIndex = 16;
+            this.soluong.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // comboBox4
+            // kichthuoc
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.kichthuoc.FormattingEnabled = true;
+            this.kichthuoc.Items.AddRange(new object[] {
             "35",
             "36",
             "37",
@@ -353,30 +320,30 @@
             "41",
             "42",
             "43"});
-            this.comboBox4.Location = new System.Drawing.Point(111, 208);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(144, 25);
-            this.comboBox4.TabIndex = 17;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.kichthuoc.Location = new System.Drawing.Point(109, 225);
+            this.kichthuoc.Name = "kichthuoc";
+            this.kichthuoc.Size = new System.Drawing.Size(144, 25);
+            this.kichthuoc.TabIndex = 17;
+            this.kichthuoc.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
-            // comboBox5
+            // theloai
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.theloai.FormattingEnabled = true;
+            this.theloai.Items.AddRange(new object[] {
             "Giày thể thao",
             "Giày cao gót",
             "Giày boot",
             "Giày thời trang"});
-            this.comboBox5.Location = new System.Drawing.Point(111, 126);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(144, 25);
-            this.comboBox5.TabIndex = 18;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.theloai.Location = new System.Drawing.Point(109, 151);
+            this.theloai.Name = "theloai";
+            this.theloai.Size = new System.Drawing.Size(144, 25);
+            this.theloai.TabIndex = 18;
+            this.theloai.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
-            // comboBox6
+            // nhasx
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.nhasx.FormattingEnabled = true;
+            this.nhasx.Items.AddRange(new object[] {
             "Vina Shoes",
             "Taiwan-based Chang Shin",
             "Pou Chen Group",
@@ -385,24 +352,24 @@
             "Gucci\'s Own Factories",
             "Bontoni",
             "Monti"});
-            this.comboBox6.Location = new System.Drawing.Point(111, 85);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(144, 25);
-            this.comboBox6.TabIndex = 19;
-            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            this.nhasx.Location = new System.Drawing.Point(109, 114);
+            this.nhasx.Name = "nhasx";
+            this.nhasx.Size = new System.Drawing.Size(144, 25);
+            this.nhasx.TabIndex = 19;
+            this.nhasx.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
-            // textBox4
+            // tensp
             // 
-            this.textBox4.Location = new System.Drawing.Point(111, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(144, 25);
-            this.textBox4.TabIndex = 20;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.tensp.Location = new System.Drawing.Point(109, 40);
+            this.tensp.Name = "tensp";
+            this.tensp.Size = new System.Drawing.Size(144, 25);
+            this.tensp.TabIndex = 20;
+            this.tensp.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(121, 122);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,133 +377,9 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11});
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
-            this.listView1.Location = new System.Drawing.Point(6, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(671, 418);
-            this.listView1.TabIndex = 22;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 30;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên sản phẩm";
-            this.columnHeader2.Width = 70;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Hãng";
-            this.columnHeader3.Width = 45;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Nhà sản xuất";
-            this.columnHeader4.Width = 59;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Thể loại";
-            this.columnHeader5.Width = 70;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Màu";
-            this.columnHeader6.Width = 53;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Kích thước";
-            this.columnHeader7.Width = 74;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Chất liệu";
-            this.columnHeader8.Width = 68;
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Giá nhập";
-            this.columnHeader9.Width = 68;
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Giá bán";
-            this.columnHeader10.Width = 70;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Số lượng";
-            this.columnHeader11.Width = 65;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.21698F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.78302F));
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox3, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox5, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox6, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 50);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(258, 408);
-            this.tableLayoutPanel1.TabIndex = 24;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(46, 151);
+            this.button1.Location = new System.Drawing.Point(50, 163);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 26);
             this.button1.TabIndex = 25;
@@ -545,60 +388,61 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.lammoianh);
+            this.panel1.Controls.Add(this.xoa);
+            this.panel1.Controls.Add(this.sua);
+            this.panel1.Controls.Add(this.them);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(463, 205);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 457);
+            this.panel1.Size = new System.Drawing.Size(197, 504);
             this.panel1.TabIndex = 26;
             // 
-            // button10
+            // lammoianh
             // 
-            this.button10.Location = new System.Drawing.Point(94, 232);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(85, 22);
-            this.button10.TabIndex = 29;
-            this.button10.Text = "Làm mới";
-            this.button10.UseVisualStyleBackColor = true;
+            this.lammoianh.Location = new System.Drawing.Point(98, 244);
+            this.lammoianh.Name = "lammoianh";
+            this.lammoianh.Size = new System.Drawing.Size(85, 22);
+            this.lammoianh.TabIndex = 29;
+            this.lammoianh.Text = "Làm mới";
+            this.lammoianh.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // xoa
             // 
-            this.button9.Location = new System.Drawing.Point(3, 232);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(85, 22);
-            this.button9.TabIndex = 28;
-            this.button9.Text = "Xóa";
-            this.button9.UseVisualStyleBackColor = true;
+            this.xoa.Location = new System.Drawing.Point(7, 244);
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(85, 22);
+            this.xoa.TabIndex = 28;
+            this.xoa.Text = "Xóa";
+            this.xoa.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // sua
             // 
-            this.button8.Location = new System.Drawing.Point(94, 183);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(85, 22);
-            this.button8.TabIndex = 27;
-            this.button8.Text = "Sửa";
-            this.button8.UseVisualStyleBackColor = true;
+            this.sua.Location = new System.Drawing.Point(98, 195);
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(85, 22);
+            this.sua.TabIndex = 27;
+            this.sua.Text = "Sửa";
+            this.sua.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // them
             // 
-            this.button7.Location = new System.Drawing.Point(3, 183);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(85, 22);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "Thêm";
-            this.button7.UseVisualStyleBackColor = true;
+            this.them.Location = new System.Drawing.Point(7, 195);
+            this.them.Name = "them";
+            this.them.Size = new System.Drawing.Size(85, 22);
+            this.them.TabIndex = 26;
+            this.them.Text = "Thêm";
+            this.them.UseVisualStyleBackColor = true;
+            this.them.Click += new System.EventHandler(this.them_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(174, 190);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(283, 472);
+            this.panel2.Size = new System.Drawing.Size(283, 519);
             this.panel2.TabIndex = 27;
             // 
             // label9
@@ -701,8 +545,8 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button6);
-            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.lammoidgv);
+            this.panel4.Controls.Add(this.loc);
             this.panel4.Controls.Add(this.comboBox8);
             this.panel4.Controls.Add(this.comboBox7);
             this.panel4.Controls.Add(this.textBox5);
@@ -715,23 +559,24 @@
             this.panel4.Size = new System.Drawing.Size(677, 203);
             this.panel4.TabIndex = 33;
             // 
-            // button6
+            // lammoidgv
             // 
-            this.button6.Location = new System.Drawing.Point(152, 134);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 24);
-            this.button6.TabIndex = 35;
-            this.button6.Text = "làm mới";
-            this.button6.UseVisualStyleBackColor = true;
+            this.lammoidgv.Location = new System.Drawing.Point(149, 134);
+            this.lammoidgv.Name = "lammoidgv";
+            this.lammoidgv.Size = new System.Drawing.Size(84, 24);
+            this.lammoidgv.TabIndex = 35;
+            this.lammoidgv.Text = "Làm mới";
+            this.lammoidgv.UseVisualStyleBackColor = true;
+            this.lammoidgv.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // loc
             // 
-            this.button5.Location = new System.Drawing.Point(16, 134);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 24);
-            this.button5.TabIndex = 34;
-            this.button5.Text = "Lọc";
-            this.button5.UseVisualStyleBackColor = true;
+            this.loc.Location = new System.Drawing.Point(16, 134);
+            this.loc.Name = "loc";
+            this.loc.Size = new System.Drawing.Size(84, 24);
+            this.loc.TabIndex = 34;
+            this.loc.Text = "Lọc";
+            this.loc.UseVisualStyleBackColor = true;
             // 
             // comboBox8
             // 
@@ -901,12 +746,88 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.listView1);
             this.panel6.Location = new System.Drawing.Point(666, 213);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(678, 449);
+            this.panel6.Size = new System.Drawing.Size(678, 496);
             this.panel6.TabIndex = 35;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 24);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(678, 469);
+            this.dataGridView1.TabIndex = 29;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.61303F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.38697F));
+            this.tableLayoutPanel2.Controls.Add(this.soluong, 1, 10);
+            this.tableLayoutPanel2.Controls.Add(this.label10, 0, 10);
+            this.tableLayoutPanel2.Controls.Add(this.giaban, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.gianhap, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 9);
+            this.tableLayoutPanel2.Controls.Add(this.chatlieu, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.kichthuoc, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.mau, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.tensp, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.theloai, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.hang, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.nhasx, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.label8, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 43);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 12;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(261, 451);
+            this.tableLayoutPanel2.TabIndex = 30;
+            // 
+            // label21
+            // 
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 37);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "ID";
             // 
             // product
             // 
@@ -927,8 +848,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.product_FormClosing);
             this.Load += new System.EventHandler(this.product_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -937,6 +856,9 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -953,30 +875,17 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox mau;
+        private System.Windows.Forms.ComboBox hang;
+        private System.Windows.Forms.ComboBox chatlieu;
+        private System.Windows.Forms.TextBox giaban;
+        private System.Windows.Forms.TextBox gianhap;
+        private System.Windows.Forms.TextBox soluong;
+        private System.Windows.Forms.ComboBox kichthuoc;
+        private System.Windows.Forms.ComboBox theloai;
+        private System.Windows.Forms.ComboBox nhasx;
+        private System.Windows.Forms.TextBox tensp;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -996,12 +905,12 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button lammoianh;
+        private System.Windows.Forms.Button xoa;
+        private System.Windows.Forms.Button sua;
+        private System.Windows.Forms.Button them;
+        private System.Windows.Forms.Button lammoidgv;
+        private System.Windows.Forms.Button loc;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button11;
@@ -1013,6 +922,9 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label21;
     }
 }
 
