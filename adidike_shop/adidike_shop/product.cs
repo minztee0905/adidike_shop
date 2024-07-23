@@ -71,7 +71,7 @@ namespace adidike_shop
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string inputText = giaban.Text;
+/*            string inputText = giaban.Text;
 
             string numericText = new string(inputText.Where(char.IsDigit).ToArray());
 
@@ -85,12 +85,12 @@ namespace adidike_shop
                 giaban.SelectionStart = formattedText.Length;
 
                 giaban.TextChanged += textBox1_TextChanged;
-            }
+            }*/
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string inputText = gianhap.Text;
+/*            string inputText = gianhap.Text;
 
             string numericText = new string(inputText.Where(char.IsDigit).ToArray());
 
@@ -104,7 +104,7 @@ namespace adidike_shop
                 gianhap.SelectionStart = formattedText.Length;
 
                 gianhap.TextChanged += textBox2_TextChanged;
-            }
+            }*/
         }
 
 
@@ -125,11 +125,6 @@ namespace adidike_shop
 
                 soluong.TextChanged += textBox3_TextChanged;
             }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
@@ -192,22 +187,12 @@ namespace adidike_shop
             nhasx.Height = 30;
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -242,15 +227,13 @@ namespace adidike_shop
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            id.ReadOnly = true;
             int i;
             i = dataGridView1.CurrentRow.Index;
+            id.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
             tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
             tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
             hang.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
@@ -267,8 +250,25 @@ namespace adidike_shop
         private void them_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
-            command.CommandText = "insert into product values('" + tensp.Text + "',N'" + hang.Text + "','" + nhasx.Text + "','" + theloai.Text + "','" + mau.Text + "'" +
+            command.CommandText = "insert into product values('"+id.Text+"','" + tensp.Text + "','" + hang.Text + "','" + nhasx.Text + "','" + theloai.Text + "','" + mau.Text + "'" +
                 ",'" + kichthuoc.Text + "','" + chatlieu.Text + "','" + gianhap.Text + "','" + giaban.Text + "','" + soluong.Text + "')";
+            command.ExecuteNonQuery();
+            loaddata();
+        }
+
+        private void sua_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "update product set name='" + tensp.Text + "',hang='" + hang.Text + "',nhasx='" + nhasx.Text + "',theloai='" + theloai.Text + "',color='" + mau.Text + "'" +
+                ",size=" + kichthuoc.Text + ",chatlieu='" + chatlieu.Text + "',gianhap=" + gianhap.Text + ",giaban=" + giaban.Text + ",soluong=" + soluong.Text + " where id='" + id.Text + "'";
+            command.ExecuteNonQuery();
+            loaddata();
+        }
+
+        private void xoa_Click(object sender, EventArgs e)
+        {
+            command=connection.CreateCommand();
+            command.CommandText = "delete from product where id='" + id.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
         }
