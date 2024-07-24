@@ -58,6 +58,7 @@
             this.them = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.id = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -78,25 +79,16 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.TextBox();
+            this.listBoxChoices = new System.Windows.Forms.ListBox();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -355,9 +347,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(128, 122);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -365,7 +357,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(50, 163);
+            this.button1.Location = new System.Drawing.Point(52, 145);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 26);
             this.button1.TabIndex = 25;
@@ -380,14 +372,14 @@
             this.panel1.Controls.Add(this.them);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(463, 205);
+            this.panel1.Location = new System.Drawing.Point(463, 250);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 504);
+            this.panel1.Size = new System.Drawing.Size(197, 437);
             this.panel1.TabIndex = 26;
             // 
             // lammoianh
             // 
-            this.lammoianh.Location = new System.Drawing.Point(98, 244);
+            this.lammoianh.Location = new System.Drawing.Point(100, 226);
             this.lammoianh.Name = "lammoianh";
             this.lammoianh.Size = new System.Drawing.Size(85, 22);
             this.lammoianh.TabIndex = 29;
@@ -396,7 +388,7 @@
             // 
             // xoa
             // 
-            this.xoa.Location = new System.Drawing.Point(7, 244);
+            this.xoa.Location = new System.Drawing.Point(9, 226);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(85, 22);
             this.xoa.TabIndex = 28;
@@ -406,7 +398,7 @@
             // 
             // sua
             // 
-            this.sua.Location = new System.Drawing.Point(98, 195);
+            this.sua.Location = new System.Drawing.Point(100, 177);
             this.sua.Name = "sua";
             this.sua.Size = new System.Drawing.Size(85, 22);
             this.sua.TabIndex = 27;
@@ -416,7 +408,7 @@
             // 
             // them
             // 
-            this.them.Location = new System.Drawing.Point(7, 195);
+            this.them.Location = new System.Drawing.Point(9, 177);
             this.them.Name = "them";
             this.them.Size = new System.Drawing.Size(85, 22);
             this.them.TabIndex = 26;
@@ -428,9 +420,9 @@
             // 
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(174, 190);
+            this.panel2.Location = new System.Drawing.Point(174, 235);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(283, 519);
+            this.panel2.Size = new System.Drawing.Size(283, 452);
             this.panel2.TabIndex = 27;
             // 
             // tableLayoutPanel2
@@ -490,6 +482,13 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(261, 451);
             this.tableLayoutPanel2.TabIndex = 30;
             // 
+            // id
+            // 
+            this.id.Location = new System.Drawing.Point(109, 3);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(144, 25);
+            this.id.TabIndex = 22;
+            // 
             // label21
             // 
             this.label21.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -513,7 +512,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(674, 22);
+            this.label4.Size = new System.Drawing.Size(653, 22);
             this.label4.TabIndex = 28;
             this.label4.Text = "Danh sách sản phẩm";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -546,7 +545,7 @@
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.label15);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Location = new System.Drawing.Point(174, 12);
+            this.panel3.Location = new System.Drawing.Point(174, 57);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(486, 173);
             this.panel3.TabIndex = 32;
@@ -608,9 +607,9 @@
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.label13);
-            this.panel4.Location = new System.Drawing.Point(666, 15);
+            this.panel4.Location = new System.Drawing.Point(666, 60);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(677, 203);
+            this.panel4.Size = new System.Drawing.Size(656, 203);
             this.panel4.TabIndex = 33;
             // 
             // lammoidgv
@@ -699,112 +698,13 @@
             this.label17.TabIndex = 31;
             this.label17.Text = "Tên sản phẩm";
             // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.button11);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.button12);
-            this.panel5.Controls.Add(this.button13);
-            this.panel5.Controls.Add(this.button14);
-            this.panel5.Controls.Add(this.button15);
-            this.panel5.Controls.Add(this.button16);
-            this.panel5.Controls.Add(this.button17);
-            this.panel5.Location = new System.Drawing.Point(14, 12);
-            this.panel5.Margin = new System.Windows.Forms.Padding(5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(152, 481);
-            this.panel5.TabIndex = 34;
-            // 
-            // button11
-            // 
-            this.button11.AutoSize = true;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(5, 38);
-            this.button11.Margin = new System.Windows.Forms.Padding(5);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(137, 53);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "Thanh toán";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(29, 4);
-            this.label20.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 17);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Chức năng";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(5, 416);
-            this.button12.Margin = new System.Windows.Forms.Padding(5);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(137, 53);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "Nhân viên";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(5, 353);
-            this.button13.Margin = new System.Windows.Forms.Padding(5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(137, 53);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "Doanh thu";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(5, 290);
-            this.button14.Margin = new System.Windows.Forms.Padding(5);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(137, 53);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "Phiếu xuất kho";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(5, 227);
-            this.button15.Margin = new System.Windows.Forms.Padding(5);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(137, 53);
-            this.button15.TabIndex = 0;
-            this.button15.Text = "Yêu cầu nhập";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(5, 164);
-            this.button16.Margin = new System.Windows.Forms.Padding(5);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(137, 53);
-            this.button16.TabIndex = 0;
-            this.button16.Text = "Kho";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(5, 101);
-            this.button17.Margin = new System.Windows.Forms.Padding(5);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(137, 53);
-            this.button17.TabIndex = 0;
-            this.button17.Text = "Sản phẩm";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(666, 213);
+            this.panel6.Location = new System.Drawing.Point(666, 258);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(678, 496);
+            this.panel6.Size = new System.Drawing.Size(656, 429);
             this.panel6.TabIndex = 35;
             // 
             // dataGridView1
@@ -814,25 +714,41 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(678, 469);
+            this.dataGridView1.Size = new System.Drawing.Size(653, 403);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // id
+            // listBoxChoices
             // 
-            this.id.Location = new System.Drawing.Point(109, 3);
-            this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(144, 25);
-            this.id.TabIndex = 22;
+            this.listBoxChoices.FormattingEnabled = true;
+            this.listBoxChoices.ItemHeight = 17;
+            this.listBoxChoices.Location = new System.Drawing.Point(20, 19);
+            this.listBoxChoices.Name = "listBoxChoices";
+            this.listBoxChoices.Size = new System.Drawing.Size(154, 667);
+            this.listBoxChoices.TabIndex = 36;
+            this.listBoxChoices.SelectedIndexChanged += new System.EventHandler(this.listBoxChoices_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Pink;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(174, 19);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(1148, 41);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Sản Phẩm";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.listBoxChoices);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -851,8 +767,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -908,20 +822,13 @@
         private System.Windows.Forms.Button lammoidgv;
         private System.Windows.Forms.Button loc;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox id;
+        private System.Windows.Forms.ListBox listBoxChoices;
+        private System.Windows.Forms.Label label22;
     }
 }
 

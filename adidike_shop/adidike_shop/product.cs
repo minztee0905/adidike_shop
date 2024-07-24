@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Xml.XPath;
 
 namespace adidike_shop
 {
@@ -31,6 +32,21 @@ namespace adidike_shop
         public product()
         {
             InitializeComponent();
+            LoadChoices();
+        }
+        private void LoadChoices()
+        {
+            listBoxChoices.Items.Add("Thống Kê");
+            listBoxChoices.Items.Add("Nhập Sản Phẩm");
+            listBoxChoices.Items.Add("Bán Sản Phẩm");
+            listBoxChoices.Items.Add("Sản Phẩm");
+            listBoxChoices.Items.Add("Hóa Đơn");
+            listBoxChoices.Items.Add("Khách Hàng");
+            listBoxChoices.Items.Add("Nhân Viên");
+            listBoxChoices.Items.Add("Báo Cáo");
+            listBoxChoices.Items.Add("Cài đặt");
+
+            listBoxChoices.SelectedIndex = 0;
         }
 
         private void product_FormClosing(object sender, FormClosingEventArgs e)
@@ -257,6 +273,9 @@ namespace adidike_shop
 
         private void sua_Click(object sender, EventArgs e)
         {
+            if (CheckInput() == false)
+                return;
+
             command = connection.CreateCommand();
             command.CommandText = "update product set name='" + tensp.Text + "',hang='" + hang.Text + "',nhasx='" + nhasx.Text + "',theloai='" + theloai.Text + "',color='" + mau.Text + "'" +
                 ",size=" + kichthuoc.Text + ",chatlieu='" + chatlieu.Text + "',gianhap=" + gianhap.Text + ",giaban=" + giaban.Text + ",soluong=" + soluong.Text + " where id='" + id.Text + "'";
@@ -270,6 +289,31 @@ namespace adidike_shop
             command.CommandText = "delete from product where id='" + id.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
+        }
+
+        private void listBoxChoices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedChoice = listBoxChoices.SelectedItem.ToString();
+        }
+        bool CheckInput()
+        {
+            long result1, result2, result3, result4;
+            if(id.Text==""||tensp.Text==""||hang.Text==""||nhasx.Text==""||theloai.Text==""||mau.Text==""||kichthuoc.Text==""||chatlieu.Text==""||gianhap.Text==""||giaban.Text==""||soluong.Text=="")
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin","Thông báo");
+                return false;
+            }
+            if (long.TryParse(gianhap.Text, out result1) == false || long.TryParse(giaban.Text, out result2) == false || long.TryParse(soluong.Text, out result3) == false || long.TryParse(kichthuoc.Text, out result4) == false) 
+            {
+                MessageBox.Show("Hãy nhập lại giá trị số","Thông báo");
+                return false;
+            }
+            if (result1 <= 0 || result2 <= 0 || result3 < 0 || result4 <= 0)  
+            {
+                MessageBox.Show("Hãy kiểm tra lại dấu của số", "Thông báo");
+                return false;
+            }
+            return true;
         }
     }
 }
