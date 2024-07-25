@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(product));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,13 +52,14 @@
             this.tensp = new System.Windows.Forms.TextBox();
             this.taianhlen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.a = new System.Windows.Forms.Button();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.didikeshopDataSet = new adidike_shop.didikeshopDataSet();
             this.lammoianh = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
             this.sua = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.didikeshopDataSet = new adidike_shop.didikeshopDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.id = new System.Windows.Forms.TextBox();
@@ -69,8 +69,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -85,13 +83,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listBoxChoices = new System.Windows.Forms.ListBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.didikeshopDataSet1 = new adidike_shop.didikeshopDataSet1();
-            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,7 +94,16 @@
             this.gianhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.giabanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.didikeshopDataSet1 = new adidike_shop.didikeshopDataSet1();
+            this.listBoxChoices = new System.Windows.Forms.ListBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
+            this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -112,9 +112,8 @@
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -392,6 +391,17 @@
             this.panel1.Size = new System.Drawing.Size(197, 452);
             this.panel1.TabIndex = 26;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(30, 17);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(142, 127);
+            this.dataGridView2.TabIndex = 32;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
             // a
             // 
             this.a.Location = new System.Drawing.Point(18, 182);
@@ -400,16 +410,6 @@
             this.a.TabIndex = 31;
             this.a.Text = "Thêm";
             this.a.UseVisualStyleBackColor = true;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.didikeshopDataSet;
-            // 
-            // didikeshopDataSet
-            // 
-            this.didikeshopDataSet.DataSetName = "didikeshopDataSet";
-            this.didikeshopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lammoianh
             // 
@@ -449,6 +449,16 @@
             this.them.Text = "Thêm";
             this.them.UseVisualStyleBackColor = true;
             this.them.Click += new System.EventHandler(this.them_Click);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.didikeshopDataSet;
+            // 
+            // didikeshopDataSet
+            // 
+            this.didikeshopDataSet.DataSetName = "didikeshopDataSet";
+            this.didikeshopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel2
             // 
@@ -591,25 +601,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(486, 173);
             this.panel3.TabIndex = 32;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.Location = new System.Drawing.Point(92, 63);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 97);
-            this.button4.TabIndex = 36;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(363, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 97);
-            this.button3.TabIndex = 35;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -755,14 +746,6 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -785,56 +768,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(653, 403);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // listBoxChoices
-            // 
-            this.listBoxChoices.FormattingEnabled = true;
-            this.listBoxChoices.ItemHeight = 17;
-            this.listBoxChoices.Location = new System.Drawing.Point(20, 19);
-            this.listBoxChoices.Name = "listBoxChoices";
-            this.listBoxChoices.Size = new System.Drawing.Size(154, 667);
-            this.listBoxChoices.TabIndex = 36;
-            this.listBoxChoices.SelectedIndexChanged += new System.EventHandler(this.listBoxChoices_SelectedIndexChanged);
-            // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.Color.Pink;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(174, 19);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(1148, 41);
-            this.label22.TabIndex = 37;
-            this.label22.Text = "Sản Phẩm";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(30, 17);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(142, 127);
-            this.dataGridView2.TabIndex = 32;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // didikeshopDataSet1
-            // 
-            this.didikeshopDataSet1.DataSetName = "didikeshopDataSet1";
-            this.didikeshopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataMember = "product";
-            this.productBindingSource1.DataSource = this.didikeshopDataSet1;
-            // 
-            // productTableAdapter1
-            // 
-            this.productTableAdapter1.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -924,12 +857,70 @@
             this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
             this.soluongDataGridViewTextBoxColumn.Width = 50;
             // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "product";
+            this.productBindingSource1.DataSource = this.didikeshopDataSet1;
+            // 
+            // didikeshopDataSet1
+            // 
+            this.didikeshopDataSet1.DataSetName = "didikeshopDataSet1";
+            this.didikeshopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listBoxChoices
+            // 
+            this.listBoxChoices.FormattingEnabled = true;
+            this.listBoxChoices.ItemHeight = 17;
+            this.listBoxChoices.Location = new System.Drawing.Point(20, 19);
+            this.listBoxChoices.Name = "listBoxChoices";
+            this.listBoxChoices.Size = new System.Drawing.Size(154, 667);
+            this.listBoxChoices.TabIndex = 36;
+            this.listBoxChoices.SelectedIndexChanged += new System.EventHandler(this.listBoxChoices_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Pink;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(174, 19);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(1148, 41);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Sản Phẩm";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.Location = new System.Drawing.Point(92, 63);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 97);
+            this.button4.TabIndex = 36;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.Location = new System.Drawing.Point(363, 64);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 97);
+            this.button3.TabIndex = 35;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.listBoxChoices);
@@ -945,6 +936,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.product_FormClosing);
             this.Load += new System.EventHandler(this.product_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -955,9 +947,8 @@
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
