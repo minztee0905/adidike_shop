@@ -67,7 +67,6 @@ namespace adidike_shop
 
         private void product_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'didikeshopDataSet1.product' table. You can move, or remove it, as needed.
             this.productTableAdapter1.Fill(this.didikeshopDataSet1.product);
             connection = new SqlConnection(str);
             connection.Open();
