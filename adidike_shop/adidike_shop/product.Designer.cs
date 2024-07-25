@@ -69,6 +69,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -100,8 +102,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
             this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -236,7 +236,7 @@
             "Maroon"});
             this.mau.Location = new System.Drawing.Point(109, 188);
             this.mau.Name = "mau";
-            this.mau.Size = new System.Drawing.Size(144, 25);
+            this.mau.Size = new System.Drawing.Size(144, 23);
             this.mau.TabIndex = 11;
             this.mau.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -255,7 +255,7 @@
             "Prada S.p.A"});
             this.hang.Location = new System.Drawing.Point(109, 77);
             this.hang.Name = "hang";
-            this.hang.Size = new System.Drawing.Size(144, 25);
+            this.hang.Size = new System.Drawing.Size(144, 23);
             this.hang.TabIndex = 12;
             this.hang.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -279,7 +279,7 @@
             "Canvas"});
             this.chatlieu.Location = new System.Drawing.Point(109, 262);
             this.chatlieu.Name = "chatlieu";
-            this.chatlieu.Size = new System.Drawing.Size(144, 25);
+            this.chatlieu.Size = new System.Drawing.Size(144, 23);
             this.chatlieu.TabIndex = 13;
             this.chatlieu.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -287,7 +287,7 @@
             // 
             this.giaban.Location = new System.Drawing.Point(109, 336);
             this.giaban.Name = "giaban";
-            this.giaban.Size = new System.Drawing.Size(144, 25);
+            this.giaban.Size = new System.Drawing.Size(144, 21);
             this.giaban.TabIndex = 14;
             this.giaban.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -295,7 +295,7 @@
             // 
             this.gianhap.Location = new System.Drawing.Point(109, 299);
             this.gianhap.Name = "gianhap";
-            this.gianhap.Size = new System.Drawing.Size(144, 25);
+            this.gianhap.Size = new System.Drawing.Size(144, 21);
             this.gianhap.TabIndex = 15;
             this.gianhap.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -303,7 +303,7 @@
             // 
             this.soluong.Location = new System.Drawing.Point(109, 373);
             this.soluong.Name = "soluong";
-            this.soluong.Size = new System.Drawing.Size(144, 25);
+            this.soluong.Size = new System.Drawing.Size(144, 21);
             this.soluong.TabIndex = 16;
             this.soluong.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -322,7 +322,7 @@
             "43"});
             this.kichthuoc.Location = new System.Drawing.Point(109, 225);
             this.kichthuoc.Name = "kichthuoc";
-            this.kichthuoc.Size = new System.Drawing.Size(144, 25);
+            this.kichthuoc.Size = new System.Drawing.Size(144, 23);
             this.kichthuoc.TabIndex = 17;
             this.kichthuoc.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
@@ -337,7 +337,7 @@
             "High heels"});
             this.theloai.Location = new System.Drawing.Point(109, 151);
             this.theloai.Name = "theloai";
-            this.theloai.Size = new System.Drawing.Size(144, 25);
+            this.theloai.Size = new System.Drawing.Size(144, 23);
             this.theloai.TabIndex = 18;
             this.theloai.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
@@ -355,7 +355,7 @@
             "Monti"});
             this.nhasx.Location = new System.Drawing.Point(109, 114);
             this.nhasx.Name = "nhasx";
-            this.nhasx.Size = new System.Drawing.Size(144, 25);
+            this.nhasx.Size = new System.Drawing.Size(144, 23);
             this.nhasx.TabIndex = 19;
             this.nhasx.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
@@ -363,7 +363,7 @@
             // 
             this.tensp.Location = new System.Drawing.Point(109, 40);
             this.tensp.Name = "tensp";
-            this.tensp.Size = new System.Drawing.Size(144, 25);
+            this.tensp.Size = new System.Drawing.Size(144, 21);
             this.tensp.TabIndex = 20;
             this.tensp.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -530,8 +530,9 @@
             // 
             this.id.Location = new System.Drawing.Point(109, 3);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(144, 25);
+            this.id.Size = new System.Drawing.Size(144, 21);
             this.id.TabIndex = 22;
+            this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             // 
             // label21
             // 
@@ -601,6 +602,25 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(486, 173);
             this.panel3.TabIndex = 32;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.Location = new System.Drawing.Point(92, 63);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 97);
+            this.button4.TabIndex = 36;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.Location = new System.Drawing.Point(363, 64);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 97);
+            this.button3.TabIndex = 35;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -680,7 +700,7 @@
             "Prada S.p.A"});
             this.hangtk.Location = new System.Drawing.Point(491, 98);
             this.hangtk.Name = "hangtk";
-            this.hangtk.Size = new System.Drawing.Size(155, 25);
+            this.hangtk.Size = new System.Drawing.Size(155, 23);
             this.hangtk.TabIndex = 21;
             // 
             // loaisptk
@@ -694,14 +714,15 @@
             "High heels"});
             this.loaisptk.Location = new System.Drawing.Point(254, 99);
             this.loaisptk.Name = "loaisptk";
-            this.loaisptk.Size = new System.Drawing.Size(216, 25);
+            this.loaisptk.Size = new System.Drawing.Size(216, 23);
             this.loaisptk.TabIndex = 21;
+            this.loaisptk.SelectedIndexChanged += new System.EventHandler(this.loaisptk_SelectedIndexChanged);
             // 
             // tentimkiem
             // 
             this.tentimkiem.Location = new System.Drawing.Point(16, 99);
             this.tentimkiem.Name = "tentimkiem";
-            this.tentimkiem.Size = new System.Drawing.Size(220, 25);
+            this.tentimkiem.Size = new System.Drawing.Size(220, 21);
             this.tentimkiem.TabIndex = 21;
             this.tentimkiem.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -710,7 +731,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(488, 74);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(40, 17);
+            this.label19.Size = new System.Drawing.Size(32, 15);
             this.label19.TabIndex = 33;
             this.label19.Text = "Hãng";
             this.label19.Click += new System.EventHandler(this.label19_Click);
@@ -720,7 +741,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(251, 75);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(94, 17);
+            this.label18.Size = new System.Drawing.Size(77, 15);
             this.label18.TabIndex = 32;
             this.label18.Text = "Loại sản phẩm";
             // 
@@ -729,7 +750,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(13, 75);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 17);
+            this.label17.Size = new System.Drawing.Size(75, 15);
             this.label17.TabIndex = 31;
             this.label17.Text = "Tên sản phẩm";
             // 
@@ -870,10 +891,10 @@
             // listBoxChoices
             // 
             this.listBoxChoices.FormattingEnabled = true;
-            this.listBoxChoices.ItemHeight = 17;
+            this.listBoxChoices.ItemHeight = 15;
             this.listBoxChoices.Location = new System.Drawing.Point(20, 19);
             this.listBoxChoices.Name = "listBoxChoices";
-            this.listBoxChoices.Size = new System.Drawing.Size(154, 667);
+            this.listBoxChoices.Size = new System.Drawing.Size(154, 664);
             this.listBoxChoices.TabIndex = 36;
             this.listBoxChoices.SelectedIndexChanged += new System.EventHandler(this.listBoxChoices_SelectedIndexChanged);
             // 
@@ -896,28 +917,9 @@
             // 
             this.productTableAdapter1.ClearBeforeFill = true;
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.Location = new System.Drawing.Point(92, 63);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 97);
-            this.button4.TabIndex = 36;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(363, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 97);
-            this.button3.TabIndex = 35;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // product
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.MistyRose;

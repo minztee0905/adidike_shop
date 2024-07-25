@@ -477,5 +477,15 @@ namespace adidike_shop
         {
 
         }
+
+        private void loaisptk_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

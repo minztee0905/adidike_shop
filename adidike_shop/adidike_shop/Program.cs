@@ -17,7 +17,11 @@ namespace adidike_shop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new customer());
+=======
+            Application.Run(new pay());
+>>>>>>> Stashed changes
 /*            Application.Run(new pay());  */
         }
     }
