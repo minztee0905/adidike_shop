@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml.XPath;
 using System.Collections.Specialized;
+using System.IO;
 
 namespace adidike_shop
 {
@@ -52,7 +53,7 @@ namespace adidike_shop
 
         private void product_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát không","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 e.Cancel = false;
             else
@@ -66,11 +67,58 @@ namespace adidike_shop
 
         private void product_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'didikeshopDataSet.product' table. You can move, or remove it, as needed.
-            this.productTableAdapter.Fill(this.didikeshopDataSet.product);
+            // TODO: This line of code loads data into the 'didikeshopDataSet1.product' table. You can move, or remove it, as needed.
+            this.productTableAdapter1.Fill(this.didikeshopDataSet1.product);
             connection = new SqlConnection(str);
             connection.Open();
             loaddata();
+
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView2.ColumnHeadersVisible = false;
+
+            // Thêm cột ảnh vào DataGridView
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn.Name = "ImageColumn";
+            imageColumn.HeaderText = "Image";
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            dataGridView2.Columns.Add(imageColumn);
+
+            // Ảnh mặc định
+            Image defaultImage = Properties.Resources.defaultImage;
+
+            // Lấy ảnh từ cơ sở dữ liệu và thêm vào DataGridView
+            string connectionString = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
+            string query = "SELECT picture FROM product";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(reader.GetOrdinal("picture")))
+                    {
+                        byte[] imageData = (byte[])reader["picture"];
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            Image img = Image.FromStream(ms);
+                            dataGridView1.Rows.Add(img);
+                        }
+                    }
+                    else
+                    {
+                        // Nếu cột có giá trị NULL, thêm ảnh mặc định
+                        dataGridView2.Rows.Add(defaultImage);
+                    }
+                }
+
+                reader.Close();
+            }
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -419,6 +467,11 @@ namespace adidike_shop
         }
 
         private void dgvanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
