@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,7 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -69,17 +70,22 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.adidikeshopDataSet = new adidike_shop.adidikeshopDataSet();
+            this.adidikeshopDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adidikeshopDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adidikeshopDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.button2);
@@ -186,7 +192,7 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgv1);
             this.panel3.Location = new System.Drawing.Point(687, 192);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(530, 484);
@@ -205,7 +211,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 4;
-            this.button9.Text = "button9";
+            this.button9.Text = "Hủy";
             this.button9.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -214,7 +220,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Thanh Toán";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -235,17 +241,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tổng hóa đơn";
             // 
-            // dataGridView1
+            // dgv1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(524, 339);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv1.BackgroundColor = System.Drawing.Color.White;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(3, 3);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.ReadOnly = true;
+            this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv1.Size = new System.Drawing.Size(524, 339);
+            this.dgv1.TabIndex = 0;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label2
             // 
@@ -270,6 +277,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel2.Controls.Add(this.button11);
             this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.comboBox2);
@@ -304,15 +312,31 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(318, 37);
+            this.comboBox2.Items.AddRange(new object[] {
+            "CP – SX – TM – DV JUNO",
+            "SX HTD Bình Tiên – Biti’s",
+            "MTV Giày Da An Ba",
+            "CP Giầy Việt – Vina-Giầy",
+            "Giày Thời Trang Hạnh Dung",
+            "Thời trang Evashoes"});
+            this.comboBox2.Location = new System.Drawing.Point(281, 37);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(131, 21);
+            this.comboBox2.Size = new System.Drawing.Size(168, 21);
             this.comboBox2.TabIndex = 5;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(200, 37);
+            this.comboBox1.Items.AddRange(new object[] {
+            "Nike ",
+            "Adidas",
+            "Puma",
+            "Converse",
+            "Skechers",
+            "New Balance",
+            "Reebok",
+            "Asic"});
+            this.comboBox1.Location = new System.Drawing.Point(179, 37);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(76, 21);
             this.comboBox1.TabIndex = 4;
@@ -327,7 +351,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(315, 19);
+            this.label9.Location = new System.Drawing.Point(278, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 2;
@@ -336,7 +360,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(200, 19);
+            this.label8.Location = new System.Drawing.Point(176, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 1;
@@ -353,19 +377,21 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dataGridView2);
+            this.panel4.Controls.Add(this.dgv2);
             this.panel4.Location = new System.Drawing.Point(218, 192);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(466, 484);
             this.panel4.TabIndex = 6;
             // 
-            // dataGridView2
+            // dgv2
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(459, 478);
-            this.dataGridView2.TabIndex = 0;
+            this.dgv2.BackgroundColor = System.Drawing.Color.White;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Location = new System.Drawing.Point(4, 3);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.Size = new System.Drawing.Size(459, 478);
+            this.dgv2.TabIndex = 0;
+            this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
             // 
             // label4
             // 
@@ -387,6 +413,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel5.Controls.Add(this.button12);
             this.panel5.Controls.Add(this.textBox5);
             this.panel5.Controls.Add(this.textBox4);
@@ -466,11 +493,21 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Khách hàng";
             // 
+            // adidikeshopDataSet
+            // 
+            this.adidikeshopDataSet.DataSetName = "adidikeshopDataSet";
+            this.adidikeshopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adidikeshopDataSetBindingSource
+            // 
+            this.adidikeshopDataSetBindingSource.DataSource = this.adidikeshopDataSet;
+            this.adidikeshopDataSetBindingSource.Position = 0;
+            // 
             // pay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1219, 688);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel5);
@@ -484,18 +521,20 @@
             this.Controls.Add(this.panel1);
             this.Name = "pay";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.pay_Load);
+            this.Load += new System.EventHandler(this.pay_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adidikeshopDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.adidikeshopDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,7 +554,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button1;
@@ -535,7 +574,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
@@ -544,6 +583,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.BindingSource adidikeshopDataSetBindingSource;
+        private adidike_shop.adidikeshopDataSet adidikeshopDataSet;
     }
 }
 

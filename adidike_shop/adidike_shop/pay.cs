@@ -9,18 +9,18 @@ namespace thanhtoan
     {
         SqlConnection conn;
         SqlCommand cmd;
-        string str = @"";
+        string str = @"Data Source=MINH-TRIET\SQLEXPRESS;Initial Catalog=adidikeshop;Integrated Security=True";
         SqlDataAdapter adt = new SqlDataAdapter();
         DataTable tb =  new DataTable();
         void loaddata()
         
             {
                 cmd = conn.CreateCommand(); 
-                cmd.CommandText = "select * from payment"; 
+                cmd.CommandText = "select * from listprd1"; 
                 adt.SelectCommand = cmd; 
                 tb.Clear();
                 adt.Fill(tb);
-                dataGridView1.DataSource = tb;
+                dgv2.DataSource = tb;
             }
         
 
@@ -63,12 +63,10 @@ namespace thanhtoan
 
       
 
-        private void pay_Load(object sender, EventArgs e)
+       private void pay_Load(object sender, EventArgs e)
         
         {
-            conn = new SqlConnection(str);
-            conn.Open(); 
-            loaddata();
+        
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -77,6 +75,18 @@ namespace thanhtoan
         }
 
         private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pay_Load_1(object sender, EventArgs e)
+        {
+            conn = new SqlConnection(str);
+            conn.Open();
+            loaddata();
+        }
+
+        private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
