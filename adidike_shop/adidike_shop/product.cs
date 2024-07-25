@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml.XPath;
+using System.Collections.Specialized;
 
 namespace adidike_shop
 {
@@ -65,6 +66,8 @@ namespace adidike_shop
 
         private void product_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'didikeshopDataSet.product' table. You can move, or remove it, as needed.
+            this.productTableAdapter.Fill(this.didikeshopDataSet.product);
             connection = new SqlConnection(str);
             connection.Open();
             loaddata();
@@ -240,7 +243,7 @@ namespace adidike_shop
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            loaddata();            
         }
 
 
@@ -314,6 +317,110 @@ namespace adidike_shop
                 return false;
             }
             return true;
+        }
+        class ketnoi
+        {
+
+            public SqlConnection kn = new SqlConnection();
+            public void kn_csdl()
+            {
+                string chuoikn = "Initial Catalog=SQLNCLI.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=QlCN;Data Source=.";
+
+                kn.ConnectionString = chuoikn;
+                kn.Open();
+            }
+            public string lay1giatri(string sql)
+            {
+                string kq = "";
+                try
+                {
+                    kn_csdl();
+
+                    SqlCommand sqlComm = new SqlCommand(sql, kn);
+                    SqlDataReader r = sqlComm.ExecuteReader();
+                    if (r.Read())
+                    {
+                        kq = r["tong"].ToString();
+                    }
+                }
+                catch
+                { }
+                return kq;
+            }
+
+
+            public void dongketnoi()
+            {
+                if (kn.State == ConnectionState.Open)
+                { kn.Close(); }
+            }
+            public DataTable bangdulieu = new DataTable();
+            public DataTable laybang(string caulenh)
+            {
+                try
+                {
+                    kn_csdl();
+                    SqlDataAdapter Adapter = new SqlDataAdapter(caulenh, kn);
+                    DataSet ds = new DataSet();
+
+                    Adapter.Fill(bangdulieu);
+                }
+                catch (System.Exception)
+                {
+                    bangdulieu = null;
+                }
+                finally
+                {
+                    dongketnoi();
+                }
+
+                return bangdulieu;
+            }
+
+            public int xulydulieu(string caulenhsql)
+            {
+                int kq = 0;
+                try
+                {
+                    kn_csdl();
+                    SqlCommand lenh = new SqlCommand(caulenhsql, kn);
+                    kq = lenh.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    //Thông báo lỗi ra!
+
+                    kq = 0;
+                }
+                finally
+                {
+                    dongketnoi();
+                }
+                return kq;
+            }
+        }
+        public void LoadGridByKeyword()
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "select * from product where name like '%" + tentimkiem.Text + "%' and theloai like '%" + loaisptk.Text + "%' and hang like '%" + hangtk.Text + "%' ";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+        }
+        private void loc_Click(object sender, EventArgs e)
+        {
+            LoadGridByKeyword();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
