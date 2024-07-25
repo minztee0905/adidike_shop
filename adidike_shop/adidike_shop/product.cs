@@ -314,6 +314,9 @@ namespace adidike_shop
 
         private void them_Click(object sender, EventArgs e)
         {
+            if (CheckInput() == false)
+                return;
+
             command = connection.CreateCommand();
             command.CommandText = "insert into product values('"+id.Text+"','" + tensp.Text + "','" + hang.Text + "','" + nhasx.Text + "','" + theloai.Text + "','" + mau.Text + "'" +
                 ",'" + kichthuoc.Text + "','" + chatlieu.Text + "','" + gianhap.Text + "','" + giaban.Text + "','" + soluong.Text + "')";

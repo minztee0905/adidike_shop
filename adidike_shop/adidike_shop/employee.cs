@@ -57,6 +57,9 @@ namespace adidike_shop
 
         private void them_Click(object sender, EventArgs e)
         {
+            if (CheckInput() == false)
+                return;
+
             command = connection.CreateCommand();
             command.CommandText = "insert into employee values('" + tennv.Text + "','" + gioitinh.Text + "','" + ngaysinh.Text + "','" + diachi.Text + "','" + gmail.Text + "','" + sdt.Text + "','" + ngaylamviec.Text + "','" + chucvu.Text + "')";
             command.ExecuteNonQuery();
@@ -78,7 +81,7 @@ namespace adidike_shop
 
             command = connection.CreateCommand();
             command.CommandText = "update employee set tennv='" + tennv.Text + "',gioitinh='" + gioitinh.Text + "',ngaysinh='" + ngaysinh.Text + "',diachi='" + diachi.Text + "',gmail='" + gmail.Text + "'" +
-                ",sdt='" + sdt.Text + "',chucvu='" + chucvu.Text + "'";
+                ",sdt='" + sdt.Text + "',ngaylamviec='" + ngaylamviec.Text + "',chucvu='" + chucvu.Text + "' where sdt ='" + sdt.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
         }

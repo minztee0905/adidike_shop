@@ -68,6 +68,9 @@ namespace adidike_shop
 
         private void them_Click(object sender, EventArgs e)
         {
+            if (CheckInput() == false)
+                return;
+
             command = connection.CreateCommand();
             command.CommandText = "insert into customer values('" + tenkhachhang.Text + "','" + gioitinh.Text + "','" + ngaydangki.Text + "','" + gmail.Text + "','" + sdt.Text + "','" + diachi.Text + "')";
             command.ExecuteNonQuery();
@@ -89,7 +92,7 @@ namespace adidike_shop
 
             command = connection.CreateCommand();
             command.CommandText = "update customer set tenkh='" + tenkhachhang.Text + "',gioitinh='" + gioitinh.Text + "',ngaydki='" + ngaydangki.Text + "',diachi='" + diachi.Text + "',gmail='" + gmail.Text + "'" +
-                ",sdt='" + sdt.Text + "'";
+                ",sdt='" + sdt.Text + "'where sdt='" + sdt.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
         }
