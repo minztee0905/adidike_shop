@@ -9,7 +9,7 @@ namespace thanhtoan
     {
         SqlConnection conn;
         SqlCommand cmd;
-        string str = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
+        string str = @"";
         SqlDataAdapter adt = new SqlDataAdapter();
         DataTable tb =  new DataTable();
         void loaddata()
@@ -72,6 +72,11 @@ namespace thanhtoan
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
         {
 
         }
