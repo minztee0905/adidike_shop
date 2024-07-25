@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace adidike_shop
 {
-    public partial class customer : Form
+    public partial class Form1 : Form
     {
-        public customer()
+        public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

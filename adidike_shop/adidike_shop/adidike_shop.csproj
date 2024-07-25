@@ -67,6 +67,12 @@
     <Compile Include="customer.Designer.cs">
       <DependentUpon>customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee.Designer.cs">
+      <DependentUpon>employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="pay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="customer.resx">
       <DependentUpon>customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee.resx">
+      <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pay.resx">
       <DependentUpon>pay.cs</DependentUpon>
