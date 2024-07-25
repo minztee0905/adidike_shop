@@ -77,7 +77,7 @@ namespace adidike_shop
         private void xoa_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
-            command.CommandText = "delete from customer where sdt='" + diachi.Text + "'";
+            command.CommandText = "delete from customer where sdt='" + sdt.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
         }
@@ -88,8 +88,8 @@ namespace adidike_shop
                 return;
 
             command = connection.CreateCommand();
-            command.CommandText = "update customer set tenkh='" + tenkhachhang.Text + "',gioitinh='" + gioitinh.Text + "',ngaydki='" + ngaydangki.Text + "',diachi='" + gmail.Text + "',gmail='" + sdt.Text + "'" +
-                ",sdt='" + diachi.Text + "'";
+            command.CommandText = "update customer set tenkh='" + tenkhachhang.Text + "',gioitinh='" + gioitinh.Text + "',ngaydki='" + ngaydangki.Text + "',diachi='" + diachi.Text + "',gmail='" + gmail.Text + "'" +
+                ",sdt='" + sdt.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
         }
@@ -126,6 +126,11 @@ namespace adidike_shop
         private void lammoidgv_Click(object sender, EventArgs e)
         {
             loaddata();
+        }
+
+        private void loc_Click(object sender, EventArgs e)
+        {
+            LoadGridByKeyword();
         }
     }
 }

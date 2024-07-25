@@ -51,6 +51,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tenkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioitinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaydkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.didikeshopDataSet2 = new adidike_shop.didikeshopDataSet2();
             this.panel4 = new System.Windows.Forms.Panel();
             this.sdttxt = new System.Windows.Forms.TextBox();
             this.lammoidgv = new System.Windows.Forms.Button();
@@ -61,22 +69,14 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.didikeshopDataSet2 = new adidike_shop.didikeshopDataSet2();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new adidike_shop.didikeshopDataSet2TableAdapters.customerTableAdapter();
-            this.tenkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioitinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaydkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet2)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxChoices
@@ -312,6 +312,64 @@
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // tenkhDataGridViewTextBoxColumn
+            // 
+            this.tenkhDataGridViewTextBoxColumn.DataPropertyName = "tenkh";
+            this.tenkhDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
+            this.tenkhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenkhDataGridViewTextBoxColumn.Name = "tenkhDataGridViewTextBoxColumn";
+            this.tenkhDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // gioitinhDataGridViewTextBoxColumn
+            // 
+            this.gioitinhDataGridViewTextBoxColumn.DataPropertyName = "gioitinh";
+            this.gioitinhDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
+            this.gioitinhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gioitinhDataGridViewTextBoxColumn.Name = "gioitinhDataGridViewTextBoxColumn";
+            this.gioitinhDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // ngaydkiDataGridViewTextBoxColumn
+            // 
+            this.ngaydkiDataGridViewTextBoxColumn.DataPropertyName = "ngaydki";
+            this.ngaydkiDataGridViewTextBoxColumn.HeaderText = "Ngày Đăng Ký";
+            this.ngaydkiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngaydkiDataGridViewTextBoxColumn.Name = "ngaydkiDataGridViewTextBoxColumn";
+            this.ngaydkiDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // diachiDataGridViewTextBoxColumn
+            // 
+            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
+            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
+            this.diachiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
+            this.diachiDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // gmailDataGridViewTextBoxColumn
+            // 
+            this.gmailDataGridViewTextBoxColumn.DataPropertyName = "gmail";
+            this.gmailDataGridViewTextBoxColumn.HeaderText = "Gmail";
+            this.gmailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gmailDataGridViewTextBoxColumn.Name = "gmailDataGridViewTextBoxColumn";
+            this.gmailDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // sdtDataGridViewTextBoxColumn
+            // 
+            this.sdtDataGridViewTextBoxColumn.DataPropertyName = "sdt";
+            this.sdtDataGridViewTextBoxColumn.HeaderText = "SĐT";
+            this.sdtDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sdtDataGridViewTextBoxColumn.Name = "sdtDataGridViewTextBoxColumn";
+            this.sdtDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "customer";
+            this.customerBindingSource.DataSource = this.didikeshopDataSet2;
+            // 
+            // didikeshopDataSet2
+            // 
+            this.didikeshopDataSet2.DataSetName = "didikeshopDataSet2";
+            this.didikeshopDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.sdttxt);
@@ -351,6 +409,7 @@
             this.loc.TabIndex = 34;
             this.loc.Text = "Lọc";
             this.loc.UseVisualStyleBackColor = true;
+            this.loc.Click += new System.EventHandler(this.loc_Click);
             // 
             // tentimkiem
             // 
@@ -412,67 +471,9 @@
             this.label4.Text = "Danh sách khách hàng";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // didikeshopDataSet2
-            // 
-            this.didikeshopDataSet2.DataSetName = "didikeshopDataSet2";
-            this.didikeshopDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "customer";
-            this.customerBindingSource.DataSource = this.didikeshopDataSet2;
-            // 
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // tenkhDataGridViewTextBoxColumn
-            // 
-            this.tenkhDataGridViewTextBoxColumn.DataPropertyName = "tenkh";
-            this.tenkhDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
-            this.tenkhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenkhDataGridViewTextBoxColumn.Name = "tenkhDataGridViewTextBoxColumn";
-            this.tenkhDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // gioitinhDataGridViewTextBoxColumn
-            // 
-            this.gioitinhDataGridViewTextBoxColumn.DataPropertyName = "gioitinh";
-            this.gioitinhDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
-            this.gioitinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gioitinhDataGridViewTextBoxColumn.Name = "gioitinhDataGridViewTextBoxColumn";
-            this.gioitinhDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // ngaydkiDataGridViewTextBoxColumn
-            // 
-            this.ngaydkiDataGridViewTextBoxColumn.DataPropertyName = "ngaydki";
-            this.ngaydkiDataGridViewTextBoxColumn.HeaderText = "Ngày Đăng Ký";
-            this.ngaydkiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngaydkiDataGridViewTextBoxColumn.Name = "ngaydkiDataGridViewTextBoxColumn";
-            this.ngaydkiDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // diachiDataGridViewTextBoxColumn
-            // 
-            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
-            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
-            this.diachiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
-            this.diachiDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // gmailDataGridViewTextBoxColumn
-            // 
-            this.gmailDataGridViewTextBoxColumn.DataPropertyName = "gmail";
-            this.gmailDataGridViewTextBoxColumn.HeaderText = "Gmail";
-            this.gmailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gmailDataGridViewTextBoxColumn.Name = "gmailDataGridViewTextBoxColumn";
-            this.gmailDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // sdtDataGridViewTextBoxColumn
-            // 
-            this.sdtDataGridViewTextBoxColumn.DataPropertyName = "sdt";
-            this.sdtDataGridViewTextBoxColumn.HeaderText = "SĐT";
-            this.sdtDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sdtDataGridViewTextBoxColumn.Name = "sdtDataGridViewTextBoxColumn";
-            this.sdtDataGridViewTextBoxColumn.Width = 80;
             // 
             // customer
             // 
@@ -494,10 +495,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
