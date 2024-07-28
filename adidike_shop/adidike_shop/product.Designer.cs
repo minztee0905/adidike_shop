@@ -52,7 +52,6 @@
             this.tensp = new System.Windows.Forms.TextBox();
             this.taianhlen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.a = new System.Windows.Forms.Button();
             this.lammoianh = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
@@ -84,26 +83,33 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nhasxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.theloaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chatlieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gianhapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giabanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soluongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.didikeshopDataSet1 = new adidike_shop.didikeshopDataSet1();
             this.listBoxChoices = new System.Windows.Forms.ListBox();
             this.label22 = new System.Windows.Forms.Label();
             this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
             this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
+<<<<<<< Updated upstream
+=======
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.didikeshopDataSet4 = new adidike_shop.didikeshopDataSet4();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.productTableAdapter2 = new adidike_shop.didikeshopDataSet4TableAdapters.productTableAdapter();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hangDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhasxDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.theloaiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chatlieuDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gianhapDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giabanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soluongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.anhsp = new System.Windows.Forms.PictureBox();
+>>>>>>> Stashed changes
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -111,9 +117,12 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anhsp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -379,7 +388,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.anhsp);
             this.panel1.Controls.Add(this.a);
             this.panel1.Controls.Add(this.lammoianh);
             this.panel1.Controls.Add(this.xoa);
@@ -391,17 +400,6 @@
             this.panel1.Size = new System.Drawing.Size(197, 452);
             this.panel1.TabIndex = 26;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(30, 17);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(142, 127);
-            this.dataGridView2.TabIndex = 32;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
             // a
             // 
             this.a.Location = new System.Drawing.Point(18, 182);
@@ -410,6 +408,7 @@
             this.a.TabIndex = 31;
             this.a.Text = "Thêm";
             this.a.UseVisualStyleBackColor = true;
+            this.a.Click += new System.EventHandler(this.a_Click);
             // 
             // lammoianh
             // 
@@ -756,127 +755,12 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Controls.Add(this.dataGridView2);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Location = new System.Drawing.Point(666, 258);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(656, 429);
             this.panel6.TabIndex = 35;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.hangDataGridViewTextBoxColumn,
-            this.nhasxDataGridViewTextBoxColumn,
-            this.theloaiDataGridViewTextBoxColumn,
-            this.colorDataGridViewTextBoxColumn,
-            this.sizeDataGridViewTextBoxColumn,
-            this.chatlieuDataGridViewTextBoxColumn,
-            this.gianhapDataGridViewTextBoxColumn,
-            this.giabanDataGridViewTextBoxColumn,
-            this.soluongDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.productBindingSource1;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(653, 403);
-            this.dataGridView1.TabIndex = 29;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên Sản Phẩm";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // hangDataGridViewTextBoxColumn
-            // 
-            this.hangDataGridViewTextBoxColumn.DataPropertyName = "hang";
-            this.hangDataGridViewTextBoxColumn.HeaderText = "Hãng";
-            this.hangDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hangDataGridViewTextBoxColumn.Name = "hangDataGridViewTextBoxColumn";
-            this.hangDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // nhasxDataGridViewTextBoxColumn
-            // 
-            this.nhasxDataGridViewTextBoxColumn.DataPropertyName = "nhasx";
-            this.nhasxDataGridViewTextBoxColumn.HeaderText = "Nhà Sản Xuất";
-            this.nhasxDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nhasxDataGridViewTextBoxColumn.Name = "nhasxDataGridViewTextBoxColumn";
-            this.nhasxDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // theloaiDataGridViewTextBoxColumn
-            // 
-            this.theloaiDataGridViewTextBoxColumn.DataPropertyName = "theloai";
-            this.theloaiDataGridViewTextBoxColumn.HeaderText = "Thể Loại";
-            this.theloaiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.theloaiDataGridViewTextBoxColumn.Name = "theloaiDataGridViewTextBoxColumn";
-            this.theloaiDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // colorDataGridViewTextBoxColumn
-            // 
-            this.colorDataGridViewTextBoxColumn.DataPropertyName = "color";
-            this.colorDataGridViewTextBoxColumn.HeaderText = "Màu";
-            this.colorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
-            this.colorDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // sizeDataGridViewTextBoxColumn
-            // 
-            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "size";
-            this.sizeDataGridViewTextBoxColumn.HeaderText = "Kích Thước";
-            this.sizeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
-            this.sizeDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // chatlieuDataGridViewTextBoxColumn
-            // 
-            this.chatlieuDataGridViewTextBoxColumn.DataPropertyName = "chatlieu";
-            this.chatlieuDataGridViewTextBoxColumn.HeaderText = "Chất Liệu";
-            this.chatlieuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.chatlieuDataGridViewTextBoxColumn.Name = "chatlieuDataGridViewTextBoxColumn";
-            this.chatlieuDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // gianhapDataGridViewTextBoxColumn
-            // 
-            this.gianhapDataGridViewTextBoxColumn.DataPropertyName = "gianhap";
-            this.gianhapDataGridViewTextBoxColumn.HeaderText = "Giá Nhập";
-            this.gianhapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gianhapDataGridViewTextBoxColumn.Name = "gianhapDataGridViewTextBoxColumn";
-            this.gianhapDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // giabanDataGridViewTextBoxColumn
-            // 
-            this.giabanDataGridViewTextBoxColumn.DataPropertyName = "giaban";
-            this.giabanDataGridViewTextBoxColumn.HeaderText = "Giá Bán";
-            this.giabanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.giabanDataGridViewTextBoxColumn.Name = "giabanDataGridViewTextBoxColumn";
-            this.giabanDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // soluongDataGridViewTextBoxColumn
-            // 
-            this.soluongDataGridViewTextBoxColumn.DataPropertyName = "soluong";
-            this.soluongDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
-            this.soluongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soluongDataGridViewTextBoxColumn.Name = "soluongDataGridViewTextBoxColumn";
-            this.soluongDataGridViewTextBoxColumn.Width = 50;
             // 
             // productBindingSource1
             // 
@@ -917,6 +801,154 @@
             // 
             this.productTableAdapter1.ClearBeforeFill = true;
             // 
+<<<<<<< Updated upstream
+=======
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.hangDataGridViewTextBoxColumn1,
+            this.nhasxDataGridViewTextBoxColumn1,
+            this.theloaiDataGridViewTextBoxColumn1,
+            this.colorDataGridViewTextBoxColumn1,
+            this.sizeDataGridViewTextBoxColumn1,
+            this.chatlieuDataGridViewTextBoxColumn1,
+            this.gianhapDataGridViewTextBoxColumn1,
+            this.giabanDataGridViewTextBoxColumn1,
+            this.soluongDataGridViewTextBoxColumn1,
+            this.pictureDataGridViewImageColumn});
+            this.dataGridView2.DataSource = this.productBindingSource2;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 25);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(653, 401);
+            this.dataGridView2.TabIndex = 30;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
+            // 
+            // didikeshopDataSet4
+            // 
+            this.didikeshopDataSet4.DataSetName = "didikeshopDataSet4";
+            this.didikeshopDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource2
+            // 
+            this.productBindingSource2.DataMember = "product";
+            this.productBindingSource2.DataSource = this.didikeshopDataSet4;
+            // 
+            // productTableAdapter2
+            // 
+            this.productTableAdapter2.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Width = 30;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Tên Sản Phẩm";
+            this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // hangDataGridViewTextBoxColumn1
+            // 
+            this.hangDataGridViewTextBoxColumn1.DataPropertyName = "hang";
+            this.hangDataGridViewTextBoxColumn1.HeaderText = "Hãng";
+            this.hangDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.hangDataGridViewTextBoxColumn1.Name = "hangDataGridViewTextBoxColumn1";
+            this.hangDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // nhasxDataGridViewTextBoxColumn1
+            // 
+            this.nhasxDataGridViewTextBoxColumn1.DataPropertyName = "nhasx";
+            this.nhasxDataGridViewTextBoxColumn1.HeaderText = "Nhà Sản Xuất";
+            this.nhasxDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.nhasxDataGridViewTextBoxColumn1.Name = "nhasxDataGridViewTextBoxColumn1";
+            this.nhasxDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // theloaiDataGridViewTextBoxColumn1
+            // 
+            this.theloaiDataGridViewTextBoxColumn1.DataPropertyName = "theloai";
+            this.theloaiDataGridViewTextBoxColumn1.HeaderText = "Thể Loại";
+            this.theloaiDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.theloaiDataGridViewTextBoxColumn1.Name = "theloaiDataGridViewTextBoxColumn1";
+            this.theloaiDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // colorDataGridViewTextBoxColumn1
+            // 
+            this.colorDataGridViewTextBoxColumn1.DataPropertyName = "color";
+            this.colorDataGridViewTextBoxColumn1.HeaderText = "Màu";
+            this.colorDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.colorDataGridViewTextBoxColumn1.Name = "colorDataGridViewTextBoxColumn1";
+            this.colorDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // sizeDataGridViewTextBoxColumn1
+            // 
+            this.sizeDataGridViewTextBoxColumn1.DataPropertyName = "size";
+            this.sizeDataGridViewTextBoxColumn1.HeaderText = "Kích Thước";
+            this.sizeDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.sizeDataGridViewTextBoxColumn1.Name = "sizeDataGridViewTextBoxColumn1";
+            this.sizeDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // chatlieuDataGridViewTextBoxColumn1
+            // 
+            this.chatlieuDataGridViewTextBoxColumn1.DataPropertyName = "chatlieu";
+            this.chatlieuDataGridViewTextBoxColumn1.HeaderText = "Chất Liệu";
+            this.chatlieuDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.chatlieuDataGridViewTextBoxColumn1.Name = "chatlieuDataGridViewTextBoxColumn1";
+            this.chatlieuDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // gianhapDataGridViewTextBoxColumn1
+            // 
+            this.gianhapDataGridViewTextBoxColumn1.DataPropertyName = "gianhap";
+            this.gianhapDataGridViewTextBoxColumn1.HeaderText = "Giá Nhập";
+            this.gianhapDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.gianhapDataGridViewTextBoxColumn1.Name = "gianhapDataGridViewTextBoxColumn1";
+            this.gianhapDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // giabanDataGridViewTextBoxColumn1
+            // 
+            this.giabanDataGridViewTextBoxColumn1.DataPropertyName = "giaban";
+            this.giabanDataGridViewTextBoxColumn1.HeaderText = "Giá Bán";
+            this.giabanDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.giabanDataGridViewTextBoxColumn1.Name = "giabanDataGridViewTextBoxColumn1";
+            this.giabanDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // soluongDataGridViewTextBoxColumn1
+            // 
+            this.soluongDataGridViewTextBoxColumn1.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn1.HeaderText = "Số Lượng";
+            this.soluongDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.soluongDataGridViewTextBoxColumn1.Name = "soluongDataGridViewTextBoxColumn1";
+            this.soluongDataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // pictureDataGridViewImageColumn
+            // 
+            this.pictureDataGridViewImageColumn.DataPropertyName = "picture";
+            this.pictureDataGridViewImageColumn.HeaderText = "Ảnh";
+            this.pictureDataGridViewImageColumn.MinimumWidth = 6;
+            this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
+            this.pictureDataGridViewImageColumn.Width = 60;
+            // 
+            // anhsp
+            // 
+            this.anhsp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.anhsp.Location = new System.Drawing.Point(9, 6);
+            this.anhsp.Name = "anhsp";
+            this.anhsp.Size = new System.Drawing.Size(176, 138);
+            this.anhsp.TabIndex = 32;
+            this.anhsp.TabStop = false;
+            // 
+>>>>>>> Stashed changes
             // product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -938,7 +970,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.product_FormClosing);
             this.Load += new System.EventHandler(this.product_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -948,9 +979,12 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anhsp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1004,7 +1038,6 @@
         private System.Windows.Forms.Button loc;
         private System.Windows.Forms.ComboBox hangtk;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox id;
@@ -1014,21 +1047,26 @@
         private didikeshopDataSet didikeshopDataSet;
         private System.Windows.Forms.BindingSource productBindingSource;
         private didikeshopDataSetTableAdapters.productTableAdapter productTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private didikeshopDataSet1 didikeshopDataSet1;
         private System.Windows.Forms.BindingSource productBindingSource1;
         private didikeshopDataSet1TableAdapters.productTableAdapter productTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nhasxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theloaiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chatlieuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gianhapDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn giabanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soluongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private didikeshopDataSet4 didikeshopDataSet4;
+        private System.Windows.Forms.BindingSource productBindingSource2;
+        private didikeshopDataSet4TableAdapters.productTableAdapter productTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hangDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nhasxDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theloaiDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chatlieuDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gianhapDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giabanDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluongDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
+        private System.Windows.Forms.PictureBox anhsp;
     }
 }
 

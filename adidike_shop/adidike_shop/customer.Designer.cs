@@ -37,6 +37,7 @@
             this.lammoianh = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ngaydangki = new System.Windows.Forms.DateTimePicker();
             this.sdt = new System.Windows.Forms.TextBox();
             this.gmail = new System.Windows.Forms.TextBox();
             this.tenkhachhang = new System.Windows.Forms.TextBox();
@@ -50,6 +51,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tenkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioitinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaydkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sdtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.didikeshopDataSet2 = new adidike_shop.didikeshopDataSet2();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -63,13 +70,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.customerTableAdapter = new adidike_shop.didikeshopDataSet2TableAdapters.customerTableAdapter();
-            this.ngaydangki = new System.Windows.Forms.DateTimePicker();
-            this.tenkhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioitinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaydkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diachiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sdtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -107,6 +107,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(64, 43);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(226, 186);
@@ -180,6 +181,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(337, 307);
             this.tableLayoutPanel1.TabIndex = 30;
+            // 
+            // ngaydangki
+            // 
+            this.ngaydangki.CustomFormat = "MM/dd/yyyy";
+            this.ngaydangki.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngaydangki.Location = new System.Drawing.Point(104, 105);
+            this.ngaydangki.Name = "ngaydangki";
+            this.ngaydangki.Size = new System.Drawing.Size(228, 22);
+            this.ngaydangki.TabIndex = 42;
             // 
             // sdt
             // 
@@ -305,6 +315,54 @@
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // tenkhDataGridViewTextBoxColumn
+            // 
+            this.tenkhDataGridViewTextBoxColumn.DataPropertyName = "tenkh";
+            this.tenkhDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
+            this.tenkhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenkhDataGridViewTextBoxColumn.Name = "tenkhDataGridViewTextBoxColumn";
+            this.tenkhDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // gioitinhDataGridViewTextBoxColumn
+            // 
+            this.gioitinhDataGridViewTextBoxColumn.DataPropertyName = "gioitinh";
+            this.gioitinhDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
+            this.gioitinhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gioitinhDataGridViewTextBoxColumn.Name = "gioitinhDataGridViewTextBoxColumn";
+            this.gioitinhDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // ngaydkiDataGridViewTextBoxColumn
+            // 
+            this.ngaydkiDataGridViewTextBoxColumn.DataPropertyName = "ngaydki";
+            this.ngaydkiDataGridViewTextBoxColumn.HeaderText = "Ngày Đăng Ký";
+            this.ngaydkiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngaydkiDataGridViewTextBoxColumn.Name = "ngaydkiDataGridViewTextBoxColumn";
+            this.ngaydkiDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // diachiDataGridViewTextBoxColumn
+            // 
+            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
+            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
+            this.diachiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
+            this.diachiDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // gmailDataGridViewTextBoxColumn
+            // 
+            this.gmailDataGridViewTextBoxColumn.DataPropertyName = "gmail";
+            this.gmailDataGridViewTextBoxColumn.HeaderText = "Gmail";
+            this.gmailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gmailDataGridViewTextBoxColumn.Name = "gmailDataGridViewTextBoxColumn";
+            this.gmailDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // sdtDataGridViewTextBoxColumn
+            // 
+            this.sdtDataGridViewTextBoxColumn.DataPropertyName = "sdt";
+            this.sdtDataGridViewTextBoxColumn.HeaderText = "SĐT";
+            this.sdtDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sdtDataGridViewTextBoxColumn.Name = "sdtDataGridViewTextBoxColumn";
+            this.sdtDataGridViewTextBoxColumn.Width = 80;
+            // 
             // customerBindingSource
             // 
             this.customerBindingSource.DataMember = "customer";
@@ -419,63 +477,6 @@
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
-            // 
-            // ngaydangki
-            // 
-            this.ngaydangki.CustomFormat = "MM/dd/yyyy";
-            this.ngaydangki.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngaydangki.Location = new System.Drawing.Point(104, 105);
-            this.ngaydangki.Name = "ngaydangki";
-            this.ngaydangki.Size = new System.Drawing.Size(228, 22);
-            this.ngaydangki.TabIndex = 42;
-            // 
-            // tenkhDataGridViewTextBoxColumn
-            // 
-            this.tenkhDataGridViewTextBoxColumn.DataPropertyName = "tenkh";
-            this.tenkhDataGridViewTextBoxColumn.HeaderText = "Tên Khách Hàng";
-            this.tenkhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenkhDataGridViewTextBoxColumn.Name = "tenkhDataGridViewTextBoxColumn";
-            this.tenkhDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // gioitinhDataGridViewTextBoxColumn
-            // 
-            this.gioitinhDataGridViewTextBoxColumn.DataPropertyName = "gioitinh";
-            this.gioitinhDataGridViewTextBoxColumn.HeaderText = "Giới Tính";
-            this.gioitinhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gioitinhDataGridViewTextBoxColumn.Name = "gioitinhDataGridViewTextBoxColumn";
-            this.gioitinhDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // ngaydkiDataGridViewTextBoxColumn
-            // 
-            this.ngaydkiDataGridViewTextBoxColumn.DataPropertyName = "ngaydki";
-            this.ngaydkiDataGridViewTextBoxColumn.HeaderText = "Ngày Đăng Ký";
-            this.ngaydkiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngaydkiDataGridViewTextBoxColumn.Name = "ngaydkiDataGridViewTextBoxColumn";
-            this.ngaydkiDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // diachiDataGridViewTextBoxColumn
-            // 
-            this.diachiDataGridViewTextBoxColumn.DataPropertyName = "diachi";
-            this.diachiDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
-            this.diachiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.diachiDataGridViewTextBoxColumn.Name = "diachiDataGridViewTextBoxColumn";
-            this.diachiDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // gmailDataGridViewTextBoxColumn
-            // 
-            this.gmailDataGridViewTextBoxColumn.DataPropertyName = "gmail";
-            this.gmailDataGridViewTextBoxColumn.HeaderText = "Gmail";
-            this.gmailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gmailDataGridViewTextBoxColumn.Name = "gmailDataGridViewTextBoxColumn";
-            this.gmailDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // sdtDataGridViewTextBoxColumn
-            // 
-            this.sdtDataGridViewTextBoxColumn.DataPropertyName = "sdt";
-            this.sdtDataGridViewTextBoxColumn.HeaderText = "SĐT";
-            this.sdtDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sdtDataGridViewTextBoxColumn.Name = "sdtDataGridViewTextBoxColumn";
-            this.sdtDataGridViewTextBoxColumn.Width = 80;
             // 
             // customer
             // 

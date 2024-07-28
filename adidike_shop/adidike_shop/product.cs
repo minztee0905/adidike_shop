@@ -29,7 +29,7 @@ namespace adidike_shop
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            dataGridView2.DataSource = table;
         }
         public product()
         {
@@ -67,57 +67,11 @@ namespace adidike_shop
 
         private void product_Load(object sender, EventArgs e)
         {
+            this.productTableAdapter2.Fill(this.didikeshopDataSet4.product);
             this.productTableAdapter1.Fill(this.didikeshopDataSet1.product);
             connection = new SqlConnection(str);
             connection.Open();
             loaddata();
-
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.RowHeadersVisible = false;
-            dataGridView2.ColumnHeadersVisible = false;
-
-            // Thêm cột ảnh vào DataGridView
-            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            imageColumn.Name = "ImageColumn";
-            imageColumn.HeaderText = "Image";
-            imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            dataGridView2.Columns.Add(imageColumn);
-
-            // Ảnh mặc định
-            Image defaultImage = Properties.Resources.defaultImage;
-
-            // Lấy ảnh từ cơ sở dữ liệu và thêm vào DataGridView
-            string connectionString = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
-            string query = "SELECT picture FROM product";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    if (!reader.IsDBNull(reader.GetOrdinal("picture")))
-                    {
-                        byte[] imageData = (byte[])reader["picture"];
-                        using (MemoryStream ms = new MemoryStream(imageData))
-                        {
-                            Image img = Image.FromStream(ms);
-                            dataGridView1.Rows.Add(img);
-                        }
-                    }
-                    else
-                    {
-                        // Nếu cột có giá trị NULL, thêm ảnh mặc định
-                        dataGridView2.Rows.Add(defaultImage);
-                    }
-                }
-
-                reader.Close();
-            }
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -293,25 +247,6 @@ namespace adidike_shop
             loaddata();            
         }
 
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            id.ReadOnly = true;
-            int i;
-            i = dataGridView1.CurrentRow.Index;
-            id.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            tensp.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
-            hang.Text = dataGridView1.Rows[i].Cells[2].Value.ToString();
-            nhasx.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
-            theloai.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
-            mau.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
-            kichthuoc.Text = dataGridView1.Rows[i].Cells[6].Value.ToString();
-            chatlieu.Text = dataGridView1.Rows[i].Cells[7].Value.ToString();
-            gianhap.Text = dataGridView1.Rows[i].Cells[8].Value.ToString();
-            giaban.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
-            soluong.Text = dataGridView1.Rows[i].Cells[10].Value.ToString();
-        }
-
         private void them_Click(object sender, EventArgs e)
         {
             if (CheckInput() == false)
@@ -331,7 +266,7 @@ namespace adidike_shop
 
             command = connection.CreateCommand();
             command.CommandText = "update product set name='" + tensp.Text + "',hang='" + hang.Text + "',nhasx='" + nhasx.Text + "',theloai='" + theloai.Text + "',color='" + mau.Text + "'" +
-                ",size=" + kichthuoc.Text + ",chatlieu='" + chatlieu.Text + "',gianhap=" + gianhap.Text + ",giaban=" + giaban.Text + ",soluong=" + soluong.Text + " where id='" + id.Text + "'";
+                ",size=" + kichthuoc.Text + ",chatlieu='" + chatlieu.Text + "',gianhap=" + gianhap.Text + ",giaban=" + giaban.Text + ",soluong=" + soluong.Text + ",picture='"+anhsp.Image+"' where id='" + id.Text + "'";
             command.ExecuteNonQuery();
             loaddata();
         }
@@ -456,7 +391,7 @@ namespace adidike_shop
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            dataGridView2.DataSource = table;
         }
         private void loc_Click(object sender, EventArgs e)
         {
@@ -473,7 +408,39 @@ namespace adidike_shop
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            id.ReadOnly = true;
+            int i;
+            i = dataGridView2.CurrentRow.Index;
+            id.Text = dataGridView2.Rows[i].Cells[0].Value.ToString();
+            tensp.Text = dataGridView2.Rows[i].Cells[1].Value.ToString();
+            hang.Text = dataGridView2.Rows[i].Cells[2].Value.ToString();
+            nhasx.Text = dataGridView2.Rows[i].Cells[3].Value.ToString();
+            theloai.Text = dataGridView2.Rows[i].Cells[4].Value.ToString();
+            mau.Text = dataGridView2.Rows[i].Cells[5].Value.ToString();
+            kichthuoc.Text = dataGridView2.Rows[i].Cells[6].Value.ToString();
+            chatlieu.Text = dataGridView2.Rows[i].Cells[7].Value.ToString();
+            gianhap.Text = dataGridView2.Rows[i].Cells[8].Value.ToString();
+            giaban.Text = dataGridView2.Rows[i].Cells[9].Value.ToString();
+            soluong.Text = dataGridView2.Rows[i].Cells[10].Value.ToString();
+
+            SqlCommand cm = new SqlCommand("select picture from product where id=" + id.Text + "", connection);
+            string img = cm.ExecuteScalar().ToString();
+            if (img==null||img.Length==0)
+            {
+                anhsp.Image=Properties.Resources.defaultImage;
+            }
+            else
+                anhsp.Image = Image.FromFile(img);
+        }
+
+        private void anhsp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void a_Click(object sender, EventArgs e)
         {
 
         }
