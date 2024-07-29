@@ -89,8 +89,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
             this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
-<<<<<<< Updated upstream
-=======
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.didikeshopDataSet4 = new adidike_shop.didikeshopDataSet4();
             this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -108,7 +106,6 @@
             this.soluongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.anhsp = new System.Windows.Forms.PictureBox();
->>>>>>> Stashed changes
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).BeginInit();
@@ -801,8 +798,6 @@
             // 
             this.productTableAdapter1.ClearBeforeFill = true;
             // 
-<<<<<<< Updated upstream
-=======
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
@@ -948,7 +943,6 @@
             this.anhsp.TabIndex = 32;
             this.anhsp.TabStop = false;
             // 
->>>>>>> Stashed changes
             // product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
