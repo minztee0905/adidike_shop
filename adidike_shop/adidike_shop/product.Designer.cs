@@ -52,6 +52,7 @@
             this.tensp = new System.Windows.Forms.TextBox();
             this.taianhlen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.anhsp = new System.Windows.Forms.PictureBox();
             this.a = new System.Windows.Forms.Button();
             this.lammoianh = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
@@ -83,16 +84,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.didikeshopDataSet1 = new adidike_shop.didikeshopDataSet1();
-            this.listBoxChoices = new System.Windows.Forms.ListBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
-            this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.didikeshopDataSet4 = new adidike_shop.didikeshopDataSet4();
-            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.productTableAdapter2 = new adidike_shop.didikeshopDataSet4TableAdapters.productTableAdapter();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hangDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,8 +97,18 @@
             this.giabanDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluongDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.anhsp = new System.Windows.Forms.PictureBox();
+            this.productBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.didikeshopDataSet4 = new adidike_shop.didikeshopDataSet4();
+            this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.didikeshopDataSet1 = new adidike_shop.didikeshopDataSet1();
+            this.listBoxChoices = new System.Windows.Forms.ListBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.productTableAdapter = new adidike_shop.didikeshopDataSetTableAdapters.productTableAdapter();
+            this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
+            this.productTableAdapter2 = new adidike_shop.didikeshopDataSet4TableAdapters.productTableAdapter();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anhsp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -114,12 +116,11 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anhsp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -127,7 +128,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 37);
+            this.label1.Size = new System.Drawing.Size(92, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên sản phẩm";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -137,7 +138,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 37);
+            this.label2.Size = new System.Drawing.Size(92, 37);
             this.label2.TabIndex = 1;
             this.label2.Text = "Hãng";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -147,7 +148,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 37);
+            this.label3.Size = new System.Drawing.Size(92, 37);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nhà sản xuất";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -157,7 +158,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 37);
+            this.label5.Size = new System.Drawing.Size(92, 37);
             this.label5.TabIndex = 7;
             this.label5.Text = "Chất liệu";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -167,7 +168,7 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 222);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 37);
+            this.label6.Size = new System.Drawing.Size(92, 37);
             this.label6.TabIndex = 6;
             this.label6.Text = "Kích thước";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -187,7 +188,7 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 37);
+            this.label8.Size = new System.Drawing.Size(92, 37);
             this.label8.TabIndex = 4;
             this.label8.Text = "Thể loại";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -197,7 +198,7 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 370);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 37);
+            this.label10.Size = new System.Drawing.Size(92, 37);
             this.label10.TabIndex = 10;
             this.label10.Text = "Số lượng";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -207,7 +208,7 @@
             this.label11.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 333);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 37);
+            this.label11.Size = new System.Drawing.Size(92, 37);
             this.label11.TabIndex = 9;
             this.label11.Text = "Giá bán";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -217,7 +218,7 @@
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 296);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 37);
+            this.label12.Size = new System.Drawing.Size(92, 37);
             this.label12.TabIndex = 8;
             this.label12.Text = "Giá nhập";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -240,9 +241,9 @@
             "Teal",
             "Silver",
             "Maroon"});
-            this.mau.Location = new System.Drawing.Point(109, 188);
+            this.mau.Location = new System.Drawing.Point(101, 188);
             this.mau.Name = "mau";
-            this.mau.Size = new System.Drawing.Size(144, 23);
+            this.mau.Size = new System.Drawing.Size(180, 25);
             this.mau.TabIndex = 11;
             this.mau.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -259,9 +260,9 @@
             "Crocs, Inc",
             "Kering Group",
             "Prada S.p.A"});
-            this.hang.Location = new System.Drawing.Point(109, 77);
+            this.hang.Location = new System.Drawing.Point(101, 77);
             this.hang.Name = "hang";
-            this.hang.Size = new System.Drawing.Size(144, 23);
+            this.hang.Size = new System.Drawing.Size(180, 25);
             this.hang.TabIndex = 12;
             this.hang.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -283,33 +284,33 @@
             "Fresh Foam",
             "Rubber",
             "Canvas"});
-            this.chatlieu.Location = new System.Drawing.Point(109, 262);
+            this.chatlieu.Location = new System.Drawing.Point(101, 262);
             this.chatlieu.Name = "chatlieu";
-            this.chatlieu.Size = new System.Drawing.Size(144, 23);
+            this.chatlieu.Size = new System.Drawing.Size(180, 25);
             this.chatlieu.TabIndex = 13;
             this.chatlieu.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // giaban
             // 
-            this.giaban.Location = new System.Drawing.Point(109, 336);
+            this.giaban.Location = new System.Drawing.Point(101, 336);
             this.giaban.Name = "giaban";
-            this.giaban.Size = new System.Drawing.Size(144, 21);
+            this.giaban.Size = new System.Drawing.Size(180, 25);
             this.giaban.TabIndex = 14;
             this.giaban.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // gianhap
             // 
-            this.gianhap.Location = new System.Drawing.Point(109, 299);
+            this.gianhap.Location = new System.Drawing.Point(101, 299);
             this.gianhap.Name = "gianhap";
-            this.gianhap.Size = new System.Drawing.Size(144, 21);
+            this.gianhap.Size = new System.Drawing.Size(180, 25);
             this.gianhap.TabIndex = 15;
             this.gianhap.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // soluong
             // 
-            this.soluong.Location = new System.Drawing.Point(109, 373);
+            this.soluong.Location = new System.Drawing.Point(101, 373);
             this.soluong.Name = "soluong";
-            this.soluong.Size = new System.Drawing.Size(144, 21);
+            this.soluong.Size = new System.Drawing.Size(180, 25);
             this.soluong.TabIndex = 16;
             this.soluong.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -326,9 +327,9 @@
             "41",
             "42",
             "43"});
-            this.kichthuoc.Location = new System.Drawing.Point(109, 225);
+            this.kichthuoc.Location = new System.Drawing.Point(101, 225);
             this.kichthuoc.Name = "kichthuoc";
-            this.kichthuoc.Size = new System.Drawing.Size(144, 23);
+            this.kichthuoc.Size = new System.Drawing.Size(180, 25);
             this.kichthuoc.TabIndex = 17;
             this.kichthuoc.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
@@ -341,9 +342,9 @@
             "Boot",
             "Sandal",
             "High heels"});
-            this.theloai.Location = new System.Drawing.Point(109, 151);
+            this.theloai.Location = new System.Drawing.Point(101, 151);
             this.theloai.Name = "theloai";
-            this.theloai.Size = new System.Drawing.Size(144, 23);
+            this.theloai.Size = new System.Drawing.Size(180, 25);
             this.theloai.TabIndex = 18;
             this.theloai.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
@@ -359,17 +360,17 @@
             "Gucci\'s Own Factories",
             "Bontoni",
             "Monti"});
-            this.nhasx.Location = new System.Drawing.Point(109, 114);
+            this.nhasx.Location = new System.Drawing.Point(101, 114);
             this.nhasx.Name = "nhasx";
-            this.nhasx.Size = new System.Drawing.Size(144, 23);
+            this.nhasx.Size = new System.Drawing.Size(180, 25);
             this.nhasx.TabIndex = 19;
             this.nhasx.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
             // tensp
             // 
-            this.tensp.Location = new System.Drawing.Point(109, 40);
+            this.tensp.Location = new System.Drawing.Point(101, 40);
             this.tensp.Name = "tensp";
-            this.tensp.Size = new System.Drawing.Size(144, 21);
+            this.tensp.Size = new System.Drawing.Size(180, 25);
             this.tensp.TabIndex = 20;
             this.tensp.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -397,6 +398,16 @@
             this.panel1.Size = new System.Drawing.Size(197, 452);
             this.panel1.TabIndex = 26;
             // 
+            // anhsp
+            // 
+            this.anhsp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.anhsp.Location = new System.Drawing.Point(9, 6);
+            this.anhsp.Name = "anhsp";
+            this.anhsp.Size = new System.Drawing.Size(176, 138);
+            this.anhsp.TabIndex = 32;
+            this.anhsp.TabStop = false;
+            this.anhsp.Click += new System.EventHandler(this.anhsp_Click_1);
+            // 
             // a
             // 
             this.a.Location = new System.Drawing.Point(18, 182);
@@ -415,6 +426,7 @@
             this.lammoianh.TabIndex = 29;
             this.lammoianh.Text = "Làm mới";
             this.lammoianh.UseVisualStyleBackColor = true;
+            this.lammoianh.Click += new System.EventHandler(this.lammoianh_Click);
             // 
             // xoa
             // 
@@ -458,18 +470,20 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Location = new System.Drawing.Point(174, 235);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(283, 452);
+            this.panel2.Size = new System.Drawing.Size(292, 452);
             this.panel2.TabIndex = 27;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.61303F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.38697F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.73684F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.26316F));
             this.tableLayoutPanel2.Controls.Add(this.id, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.soluong, 1, 10);
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 10);
@@ -519,14 +533,14 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(261, 451);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(285, 451);
             this.tableLayoutPanel2.TabIndex = 30;
             // 
             // id
             // 
-            this.id.Location = new System.Drawing.Point(109, 3);
+            this.id.Location = new System.Drawing.Point(101, 3);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(144, 21);
+            this.id.Size = new System.Drawing.Size(180, 25);
             this.id.TabIndex = 22;
             this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             // 
@@ -535,7 +549,7 @@
             this.label21.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(3, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(94, 37);
+            this.label21.Size = new System.Drawing.Size(92, 37);
             this.label21.TabIndex = 21;
             this.label21.Text = "ID";
             // 
@@ -543,9 +557,9 @@
             // 
             this.label9.BackColor = System.Drawing.Color.PaleVioletRed;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(264, 40);
+            this.label9.Size = new System.Drawing.Size(291, 40);
             this.label9.TabIndex = 29;
             this.label9.Text = "Thông tin sản phẩm";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -554,9 +568,9 @@
             // 
             this.label4.BackColor = System.Drawing.Color.PaleVioletRed;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Location = new System.Drawing.Point(-12, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(653, 22);
+            this.label4.Size = new System.Drawing.Size(658, 22);
             this.label4.TabIndex = 28;
             this.label4.Text = "Danh sách sản phẩm";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -566,9 +580,9 @@
             // 
             this.label13.BackColor = System.Drawing.Color.PaleVioletRed;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Location = new System.Drawing.Point(-1, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(650, 40);
+            this.label13.Size = new System.Drawing.Size(657, 40);
             this.label13.TabIndex = 30;
             this.label13.Text = "Bộ lọc";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -578,9 +592,9 @@
             // 
             this.label14.BackColor = System.Drawing.Color.PaleVioletRed;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 3);
+            this.label14.Location = new System.Drawing.Point(0, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(480, 40);
+            this.label14.Size = new System.Drawing.Size(489, 40);
             this.label14.TabIndex = 31;
             this.label14.Text = "Thành phần";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -588,6 +602,7 @@
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
@@ -596,7 +611,7 @@
             this.panel3.Controls.Add(this.label14);
             this.panel3.Location = new System.Drawing.Point(174, 57);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(486, 173);
+            this.panel3.Size = new System.Drawing.Size(490, 173);
             this.panel3.TabIndex = 32;
             // 
             // button4
@@ -647,6 +662,7 @@
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.lammoidgv);
             this.panel4.Controls.Add(this.loc);
             this.panel4.Controls.Add(this.hangtk);
@@ -656,9 +672,9 @@
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.label13);
-            this.panel4.Location = new System.Drawing.Point(666, 60);
+            this.panel4.Location = new System.Drawing.Point(664, 60);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(656, 203);
+            this.panel4.Size = new System.Drawing.Size(658, 203);
             this.panel4.TabIndex = 33;
             // 
             // lammoidgv
@@ -696,7 +712,7 @@
             "Prada S.p.A"});
             this.hangtk.Location = new System.Drawing.Point(491, 98);
             this.hangtk.Name = "hangtk";
-            this.hangtk.Size = new System.Drawing.Size(155, 23);
+            this.hangtk.Size = new System.Drawing.Size(155, 25);
             this.hangtk.TabIndex = 21;
             // 
             // loaisptk
@@ -710,7 +726,7 @@
             "High heels"});
             this.loaisptk.Location = new System.Drawing.Point(254, 99);
             this.loaisptk.Name = "loaisptk";
-            this.loaisptk.Size = new System.Drawing.Size(216, 23);
+            this.loaisptk.Size = new System.Drawing.Size(216, 25);
             this.loaisptk.TabIndex = 21;
             this.loaisptk.SelectedIndexChanged += new System.EventHandler(this.loaisptk_SelectedIndexChanged);
             // 
@@ -718,7 +734,7 @@
             // 
             this.tentimkiem.Location = new System.Drawing.Point(16, 99);
             this.tentimkiem.Name = "tentimkiem";
-            this.tentimkiem.Size = new System.Drawing.Size(220, 21);
+            this.tentimkiem.Size = new System.Drawing.Size(220, 25);
             this.tentimkiem.TabIndex = 21;
             this.tentimkiem.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -727,7 +743,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(488, 74);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(32, 15);
+            this.label19.Size = new System.Drawing.Size(40, 17);
             this.label19.TabIndex = 33;
             this.label19.Text = "Hãng";
             this.label19.Click += new System.EventHandler(this.label19_Click);
@@ -737,7 +753,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(251, 75);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 15);
+            this.label18.Size = new System.Drawing.Size(94, 17);
             this.label18.TabIndex = 32;
             this.label18.Text = "Loại sản phẩm";
             // 
@@ -746,7 +762,7 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(13, 75);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(75, 15);
+            this.label17.Size = new System.Drawing.Size(91, 17);
             this.label17.TabIndex = 31;
             this.label17.Text = "Tên sản phẩm";
             // 
@@ -758,45 +774,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(656, 429);
             this.panel6.TabIndex = 35;
-            // 
-            // productBindingSource1
-            // 
-            this.productBindingSource1.DataMember = "product";
-            this.productBindingSource1.DataSource = this.didikeshopDataSet1;
-            // 
-            // didikeshopDataSet1
-            // 
-            this.didikeshopDataSet1.DataSetName = "didikeshopDataSet1";
-            this.didikeshopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // listBoxChoices
-            // 
-            this.listBoxChoices.FormattingEnabled = true;
-            this.listBoxChoices.ItemHeight = 15;
-            this.listBoxChoices.Location = new System.Drawing.Point(20, 19);
-            this.listBoxChoices.Name = "listBoxChoices";
-            this.listBoxChoices.Size = new System.Drawing.Size(154, 664);
-            this.listBoxChoices.TabIndex = 36;
-            this.listBoxChoices.SelectedIndexChanged += new System.EventHandler(this.listBoxChoices_SelectedIndexChanged);
-            // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.Color.Pink;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(174, 19);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(1148, 41);
-            this.label22.TabIndex = 37;
-            this.label22.Text = "Sản Phẩm";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // productTableAdapter
-            // 
-            this.productTableAdapter.ClearBeforeFill = true;
-            // 
-            // productTableAdapter1
-            // 
-            this.productTableAdapter1.ClearBeforeFill = true;
             // 
             // dataGridView2
             // 
@@ -816,27 +793,13 @@
             this.soluongDataGridViewTextBoxColumn1,
             this.pictureDataGridViewImageColumn});
             this.dataGridView2.DataSource = this.productBindingSource2;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 25);
+            this.dataGridView2.Location = new System.Drawing.Point(-2, 25);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(653, 401);
+            this.dataGridView2.Size = new System.Drawing.Size(658, 401);
             this.dataGridView2.TabIndex = 30;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
-            // 
-            // didikeshopDataSet4
-            // 
-            this.didikeshopDataSet4.DataSetName = "didikeshopDataSet4";
-            this.didikeshopDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productBindingSource2
-            // 
-            this.productBindingSource2.DataMember = "product";
-            this.productBindingSource2.DataSource = this.didikeshopDataSet4;
-            // 
-            // productTableAdapter2
-            // 
-            this.productTableAdapter2.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -934,18 +897,68 @@
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
             this.pictureDataGridViewImageColumn.Width = 60;
             // 
-            // anhsp
+            // productBindingSource2
             // 
-            this.anhsp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.anhsp.Location = new System.Drawing.Point(9, 6);
-            this.anhsp.Name = "anhsp";
-            this.anhsp.Size = new System.Drawing.Size(176, 138);
-            this.anhsp.TabIndex = 32;
-            this.anhsp.TabStop = false;
+            this.productBindingSource2.DataMember = "product";
+            this.productBindingSource2.DataSource = this.didikeshopDataSet4;
+            // 
+            // didikeshopDataSet4
+            // 
+            this.didikeshopDataSet4.DataSetName = "didikeshopDataSet4";
+            this.didikeshopDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productBindingSource1
+            // 
+            this.productBindingSource1.DataMember = "product";
+            this.productBindingSource1.DataSource = this.didikeshopDataSet1;
+            // 
+            // didikeshopDataSet1
+            // 
+            this.didikeshopDataSet1.DataSetName = "didikeshopDataSet1";
+            this.didikeshopDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // listBoxChoices
+            // 
+            this.listBoxChoices.FormattingEnabled = true;
+            this.listBoxChoices.ItemHeight = 17;
+            this.listBoxChoices.Location = new System.Drawing.Point(20, 19);
+            this.listBoxChoices.Name = "listBoxChoices";
+            this.listBoxChoices.Size = new System.Drawing.Size(154, 667);
+            this.listBoxChoices.TabIndex = 36;
+            this.listBoxChoices.SelectedIndexChanged += new System.EventHandler(this.listBoxChoices_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Pink;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(174, 19);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(1148, 41);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Sản Phẩm";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // productTableAdapter
+            // 
+            this.productTableAdapter.ClearBeforeFill = true;
+            // 
+            // productTableAdapter1
+            // 
+            this.productTableAdapter1.ClearBeforeFill = true;
+            // 
+            // productTableAdapter2
+            // 
+            this.productTableAdapter2.ClearBeforeFill = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // product
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.MistyRose;
@@ -964,6 +977,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.product_FormClosing);
             this.Load += new System.EventHandler(this.product_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.anhsp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -973,12 +987,11 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anhsp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1061,6 +1074,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soluongDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
         private System.Windows.Forms.PictureBox anhsp;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

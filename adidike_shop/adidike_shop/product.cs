@@ -11,6 +11,9 @@ using System.Data.SqlClient;
 using System.Xml.XPath;
 using System.Collections.Specialized;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Globalization;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace adidike_shop
 {
@@ -91,40 +94,38 @@ namespace adidike_shop
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-/*            string inputText = giaban.Text;
+            int selectionStart = giaban.SelectionStart;
+            int selectionLength = giaban.SelectionLength;
 
-            string numericText = new string(inputText.Where(char.IsDigit).ToArray());
+            // xoa phan cach
+            string text = giaban.Text.Replace(".", "").Replace(",", "");
 
-            if (long.TryParse(numericText, out long number))
+            if (int.TryParse(text, out int number))
             {
-                string formattedText = number.ToString("N0");
-
-                giaban.TextChanged -= textBox1_TextChanged;
-
-                giaban.Text = formattedText;
-                giaban.SelectionStart = formattedText.Length;
-
-                giaban.TextChanged += textBox1_TextChanged;
-            }*/
+                // format
+                giaban.Text = number.ToString("N0", CultureInfo.InvariantCulture);
+                //
+                giaban.SelectionStart = selectionStart;
+                giaban.SelectionLength = selectionLength;
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-/*            string inputText = gianhap.Text;
+            int selectionStart = gianhap.SelectionStart;
+            int selectionLength = gianhap.SelectionLength;
 
-            string numericText = new string(inputText.Where(char.IsDigit).ToArray());
+            // xoa phan cach
+            string text = gianhap.Text.Replace(".", "").Replace(",", "");
 
-            if (long.TryParse(numericText, out long number))
+            if (int.TryParse(text, out int number))
             {
-                string formattedText = number.ToString("N0");
-
-                gianhap.TextChanged -= textBox2_TextChanged;
-
-                gianhap.Text = formattedText;
-                gianhap.SelectionStart = formattedText.Length;
-
-                gianhap.TextChanged += textBox2_TextChanged;
-            }*/
+                // format
+                gianhap.Text = number.ToString("N0", CultureInfo.InvariantCulture);
+                //
+                gianhap.SelectionStart = selectionStart;
+                gianhap.SelectionLength = selectionLength;
+            }
         }
 
 
@@ -212,11 +213,6 @@ namespace adidike_shop
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label13_Click(object sender, EventArgs e)
         {
 
@@ -261,12 +257,51 @@ namespace adidike_shop
 
         private void sua_Click(object sender, EventArgs e)
         {
-            if (CheckInput() == false)
-                return;
+            string text1 = gianhap.Text.Replace(".", "").Replace(",", "");
+            int.TryParse(text1, out int number1);
+
+            string text2 = giaban.Text.Replace(".", "").Replace(",", "");
+            int.TryParse(text2, out int number2);
+
+            //++ Save picture
+
+            byte[] imageData = null;
+            if (anhsp.Image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    anhsp.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    imageData = ms.ToArray();
+                }
+            }
+
+            //--
 
             command = connection.CreateCommand();
-            command.CommandText = "update product set name='" + tensp.Text + "',hang='" + hang.Text + "',nhasx='" + nhasx.Text + "',theloai='" + theloai.Text + "',color='" + mau.Text + "'" +
-                ",size=" + kichthuoc.Text + ",chatlieu='" + chatlieu.Text + "',gianhap=" + gianhap.Text + ",giaban=" + giaban.Text + ",soluong=" + soluong.Text + ",picture='"+anhsp.Image+"' where id='" + id.Text + "'";
+            command.CommandText = "UPDATE product SET name=@name, hang=@hang, nhasx=@nhasx, theloai=@theloai, color=@color, size=@size, chatlieu=@chatlieu, gianhap=@gianhap, giaban=@giaban, soluong=@soluong, picture=@picture WHERE id=@id";
+
+            command.Parameters.AddWithValue("@name", tensp.Text);
+            command.Parameters.AddWithValue("@hang", hang.Text);
+            command.Parameters.AddWithValue("@nhasx", nhasx.Text);
+            command.Parameters.AddWithValue("@theloai", theloai.Text);
+            command.Parameters.AddWithValue("@color", mau.Text);
+            command.Parameters.AddWithValue("@size", kichthuoc.Text);
+            command.Parameters.AddWithValue("@chatlieu", chatlieu.Text);
+            command.Parameters.AddWithValue("@gianhap", number1);
+            command.Parameters.AddWithValue("@giaban", number2);
+            command.Parameters.AddWithValue("@soluong", soluong.Text);
+            command.Parameters.AddWithValue("@id", id.Text);
+
+            // picture
+            if (imageData != null)
+            {
+                command.Parameters.AddWithValue("@picture", imageData);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@picture", DBNull.Value);
+            }
+
             command.ExecuteNonQuery();
             loaddata();
         }
@@ -283,6 +318,7 @@ namespace adidike_shop
         {
             string selectedChoice = listBoxChoices.SelectedItem.ToString();
         }
+
         bool CheckInput()
         {
             long result1, result2, result3, result4;
@@ -303,87 +339,7 @@ namespace adidike_shop
             }
             return true;
         }
-        class ketnoi
-        {
 
-            public SqlConnection kn = new SqlConnection();
-            public void kn_csdl()
-            {
-                string chuoikn = "Initial Catalog=SQLNCLI.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=QlCN;Data Source=.";
-
-                kn.ConnectionString = chuoikn;
-                kn.Open();
-            }
-            public string lay1giatri(string sql)
-            {
-                string kq = "";
-                try
-                {
-                    kn_csdl();
-
-                    SqlCommand sqlComm = new SqlCommand(sql, kn);
-                    SqlDataReader r = sqlComm.ExecuteReader();
-                    if (r.Read())
-                    {
-                        kq = r["tong"].ToString();
-                    }
-                }
-                catch
-                { }
-                return kq;
-            }
-
-
-            public void dongketnoi()
-            {
-                if (kn.State == ConnectionState.Open)
-                { kn.Close(); }
-            }
-            public DataTable bangdulieu = new DataTable();
-            public DataTable laybang(string caulenh)
-            {
-                try
-                {
-                    kn_csdl();
-                    SqlDataAdapter Adapter = new SqlDataAdapter(caulenh, kn);
-                    DataSet ds = new DataSet();
-
-                    Adapter.Fill(bangdulieu);
-                }
-                catch (System.Exception)
-                {
-                    bangdulieu = null;
-                }
-                finally
-                {
-                    dongketnoi();
-                }
-
-                return bangdulieu;
-            }
-
-            public int xulydulieu(string caulenhsql)
-            {
-                int kq = 0;
-                try
-                {
-                    kn_csdl();
-                    SqlCommand lenh = new SqlCommand(caulenhsql, kn);
-                    kq = lenh.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    //Thông báo lỗi ra!
-
-                    kq = 0;
-                }
-                finally
-                {
-                    dongketnoi();
-                }
-                return kq;
-            }
-        }
         public void LoadGridByKeyword()
         {
             command = connection.CreateCommand();
@@ -399,11 +355,6 @@ namespace adidike_shop
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvanh_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -428,16 +379,13 @@ namespace adidike_shop
             SqlCommand cm = new SqlCommand("select picture from product where id=" + id.Text + "", connection);
             string img = cm.ExecuteScalar().ToString();
             if (img==null||img.Length==0)
-            {
+            { 
                 anhsp.Image=Properties.Resources.defaultImage;
             }
             else
-                anhsp.Image = Image.FromFile(img);
-        }
-
-        private void anhsp_Click(object sender, EventArgs e)
-        {
-
+            {
+                //anhsp.Image = Image.FromFile(img);
+            }
         }
 
         private void a_Click(object sender, EventArgs e)
@@ -452,6 +400,33 @@ namespace adidike_shop
 
         private void id_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void anhsp_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lammoianh_Click(object sender, EventArgs e)
+        {
+            id.Clear();
+            tensp.Clear();
+            hang.SelectedIndex = -1;
+            nhasx.SelectedIndex = -1;
+            theloai.SelectedIndex = -1;
+            mau.SelectedIndex = -1;
+            kichthuoc.SelectedIndex = -1;
+            chatlieu.SelectedIndex = -1;
+            id.Clear();
+            gianhap.Clear();
+            giaban.Clear();
+            soluong.Clear();
 
         }
     }
