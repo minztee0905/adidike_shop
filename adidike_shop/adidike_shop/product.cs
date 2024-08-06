@@ -242,21 +242,38 @@ namespace adidike_shop
         {
             loaddata();            
         }
+        private bool IsIdExists(string idValue)
+        {
+            bool exists = false;
+
+            string connectionString = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
+            string query = "SELECT COUNT(1) FROM product WHERE id = @id";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", idValue);
+
+                    int count = (int)command.ExecuteScalar();
+                    exists = count > 0;
+                }
+            }
+
+            return exists;
+        }
 
         private void them_Click(object sender, EventArgs e)
         {
             if (CheckInput() == false)
                 return;
+            if (IsIdExists(id.Text))
+            {
+                MessageBox.Show("ID này đã tồn tại, vui lòng nhập ID khác", "Thông báo");
+                return;
+            }
 
-            command = connection.CreateCommand();
-            command.CommandText = "insert into product values('"+id.Text+"','" + tensp.Text + "','" + hang.Text + "','" + nhasx.Text + "','" + theloai.Text + "','" + mau.Text + "'" +
-                ",'" + kichthuoc.Text + "','" + chatlieu.Text + "','" + gianhap.Text + "','" + giaban.Text + "','" + soluong.Text + "')";
-            command.ExecuteNonQuery();
-            loaddata();
-        }
-
-        private void sua_Click(object sender, EventArgs e)
-        {
             string text1 = gianhap.Text.Replace(".", "").Replace(",", "");
             int.TryParse(text1, out int number1);
 
@@ -264,7 +281,6 @@ namespace adidike_shop
             int.TryParse(text2, out int number2);
 
             //++ Save picture
-
             byte[] imageData = null;
             if (anhsp.Image != null)
             {
@@ -275,36 +291,98 @@ namespace adidike_shop
                 }
             }
 
-            //--
-
-            command = connection.CreateCommand();
-            command.CommandText = "UPDATE product SET name=@name, hang=@hang, nhasx=@nhasx, theloai=@theloai, color=@color, size=@size, chatlieu=@chatlieu, gianhap=@gianhap, giaban=@giaban, soluong=@soluong, picture=@picture WHERE id=@id";
-
-            command.Parameters.AddWithValue("@name", tensp.Text);
-            command.Parameters.AddWithValue("@hang", hang.Text);
-            command.Parameters.AddWithValue("@nhasx", nhasx.Text);
-            command.Parameters.AddWithValue("@theloai", theloai.Text);
-            command.Parameters.AddWithValue("@color", mau.Text);
-            command.Parameters.AddWithValue("@size", kichthuoc.Text);
-            command.Parameters.AddWithValue("@chatlieu", chatlieu.Text);
-            command.Parameters.AddWithValue("@gianhap", number1);
-            command.Parameters.AddWithValue("@giaban", number2);
-            command.Parameters.AddWithValue("@soluong", soluong.Text);
-            command.Parameters.AddWithValue("@id", id.Text);
-
-            // picture
-            if (imageData != null)
+            //-- 
+            using (SqlCommand command = connection.CreateCommand())
             {
-                command.Parameters.AddWithValue("@picture", imageData);
-            }
-            else
-            {
-                command.Parameters.AddWithValue("@picture", DBNull.Value);
-            }
+                command.CommandText = "INSERT INTO product (id, name, hang, nhasx, theloai, color, size, chatlieu, gianhap, giaban, soluong, picture) " +
+                                      "VALUES (@id, @name, @hang, @nhasx, @theloai, @color, @size, @chatlieu, @gianhap, @giaban, @soluong, @picture)";
 
-            command.ExecuteNonQuery();
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id.Text;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = tensp.Text;
+                command.Parameters.Add("@hang", SqlDbType.NVarChar).Value = hang.Text;
+                command.Parameters.Add("@nhasx", SqlDbType.NVarChar).Value = nhasx.Text;
+                command.Parameters.Add("@theloai", SqlDbType.NVarChar).Value = theloai.Text;
+                command.Parameters.Add("@color", SqlDbType.NVarChar).Value = mau.Text;
+                command.Parameters.Add("@size", SqlDbType.NVarChar).Value = kichthuoc.Text;
+                command.Parameters.Add("@chatlieu", SqlDbType.NVarChar).Value = chatlieu.Text;
+                command.Parameters.Add("@gianhap", SqlDbType.Int).Value = number1;
+                command.Parameters.Add("@giaban", SqlDbType.Int).Value = number2;
+                command.Parameters.Add("@soluong", SqlDbType.NVarChar).Value = soluong.Text;
+
+                if (imageData != null)
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = imageData;
+                }
+                else
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = DBNull.Value;
+                }
+                command.ExecuteNonQuery();
+            }
             loaddata();
         }
+
+
+        private void sua_Click(object sender, EventArgs e)
+        {
+            if (CheckInput() == false)
+                return;
+
+            int i;
+            i = dataGridView2.CurrentRow.Index;
+            if (id.Text != dataGridView2.Rows[i].Cells[0].Value.ToString())
+            {
+                MessageBox.Show("Bạn không thể thay đổi ID", "Thông báo");
+                return;
+            }
+
+            string text1 = gianhap.Text.Replace(".", "").Replace(",", "");
+            int.TryParse(text1, out int number1);
+
+            string text2 = giaban.Text.Replace(".", "").Replace(",", "");
+            int.TryParse(text2, out int number2);
+
+            // Save picture
+            byte[] imageData = null;
+            if (anhsp.Image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    anhsp.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    imageData = ms.ToArray();
+                }
+            }
+
+            using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE product SET name=@name, hang=@hang, nhasx=@nhasx, theloai=@theloai, color=@color, size=@size, chatlieu=@chatlieu, gianhap=@gianhap, giaban=@giaban, soluong=@soluong, picture=@picture WHERE id=@id";
+
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = tensp.Text;
+                command.Parameters.Add("@hang", SqlDbType.NVarChar).Value = hang.Text;
+                command.Parameters.Add("@nhasx", SqlDbType.NVarChar).Value = nhasx.Text;
+                command.Parameters.Add("@theloai", SqlDbType.NVarChar).Value = theloai.Text;
+                command.Parameters.Add("@color", SqlDbType.NVarChar).Value = mau.Text;
+                command.Parameters.Add("@size", SqlDbType.NVarChar).Value = kichthuoc.Text;
+                command.Parameters.Add("@chatlieu", SqlDbType.NVarChar).Value = chatlieu.Text;
+                command.Parameters.Add("@gianhap", SqlDbType.Int).Value = number1;
+                command.Parameters.Add("@giaban", SqlDbType.Int).Value = number2;
+                command.Parameters.Add("@soluong", SqlDbType.NVarChar).Value = soluong.Text;
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id.Text;
+
+                // picture
+                if (imageData != null)
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = imageData;
+                }
+                else
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = DBNull.Value;
+                }
+                command.ExecuteNonQuery();
+            }
+            loaddata();
+        }
+
 
         private void xoa_Click(object sender, EventArgs e)
         {
@@ -321,18 +399,12 @@ namespace adidike_shop
 
         bool CheckInput()
         {
-            long result1, result2, result3, result4;
             if(id.Text==""||tensp.Text==""||hang.Text==""||nhasx.Text==""||theloai.Text==""||mau.Text==""||kichthuoc.Text==""||chatlieu.Text==""||gianhap.Text==""||giaban.Text==""||soluong.Text=="")
             {
                 MessageBox.Show("Hãy nhập đầy đủ thông tin","Thông báo");
                 return false;
             }
-            if (long.TryParse(gianhap.Text, out result1) == false || long.TryParse(giaban.Text, out result2) == false || long.TryParse(soluong.Text, out result3) == false || long.TryParse(kichthuoc.Text, out result4) == false) 
-            {
-                MessageBox.Show("Hãy nhập lại giá trị số","Thông báo");
-                return false;
-            }
-            if (result1 <= 0 || result2 <= 0 || result3 < 0 || result4 <= 0)  
+            if ((!string.IsNullOrEmpty(gianhap.Text) && gianhap.Text[0] == '-') || (!string.IsNullOrEmpty(giaban.Text) && giaban.Text[0] == '-'))  
             {
                 MessageBox.Show("Hãy kiểm tra lại dấu của số", "Thông báo");
                 return false;
@@ -361,7 +433,6 @@ namespace adidike_shop
 
         private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            id.ReadOnly = true;
             int i;
             i = dataGridView2.CurrentRow.Index;
             id.Text = dataGridView2.Rows[i].Cells[0].Value.ToString();
