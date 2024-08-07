@@ -17,8 +17,10 @@ namespace adidike_shop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new product());
-/*            Application.Run(new pay());  */
+            //Application.Run(new product());
+            Application.Run(new employee());
+            //Application.Run(new customer());
+            /*            Application.Run(new pay());  */
         }
     }
 }

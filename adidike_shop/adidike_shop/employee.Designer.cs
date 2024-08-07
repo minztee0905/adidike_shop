@@ -62,27 +62,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.chucvu = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.sua = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
-            this.lammoianh = new System.Windows.Forms.Button();
+            this.lammoi = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ngaylamviec = new System.Windows.Forms.DateTimePicker();
+            this.ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.gioitinh = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listBoxChoices = new System.Windows.Forms.ListBox();
             this.employeeTableAdapter = new adidike_shop.didikeshopDataSet3TableAdapters.employeeTableAdapter();
-            this.ngaysinh = new System.Windows.Forms.DateTimePicker();
-            this.ngaylamviec = new System.Windows.Forms.DateTimePicker();
+            this.anh = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anh)).BeginInit();
             this.SuspendLayout();
             // 
             // sdttxt
@@ -357,12 +357,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.anh);
             this.panel2.Controls.Add(this.chucvu);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.sua);
             this.panel2.Controls.Add(this.xoa);
-            this.panel2.Controls.Add(this.lammoianh);
+            this.panel2.Controls.Add(this.lammoi);
             this.panel2.Controls.Add(this.them);
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.label9);
@@ -391,16 +391,6 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "Chức Vụ";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(16, 43);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(146, 130);
-            this.dataGridView2.TabIndex = 35;
-            // 
             // sua
             // 
             this.sua.Location = new System.Drawing.Point(179, 562);
@@ -421,15 +411,15 @@
             this.xoa.UseVisualStyleBackColor = true;
             this.xoa.Click += new System.EventHandler(this.xoa_Click);
             // 
-            // lammoianh
+            // lammoi
             // 
-            this.lammoianh.Location = new System.Drawing.Point(263, 562);
-            this.lammoianh.Name = "lammoianh";
-            this.lammoianh.Size = new System.Drawing.Size(78, 31);
-            this.lammoianh.TabIndex = 32;
-            this.lammoianh.Text = "Làm mới";
-            this.lammoianh.UseVisualStyleBackColor = true;
-            this.lammoianh.Click += new System.EventHandler(this.lammoianh_Click);
+            this.lammoi.Location = new System.Drawing.Point(263, 562);
+            this.lammoi.Name = "lammoi";
+            this.lammoi.Size = new System.Drawing.Size(78, 31);
+            this.lammoi.TabIndex = 32;
+            this.lammoi.Text = "Làm mới";
+            this.lammoi.UseVisualStyleBackColor = true;
+            this.lammoi.Click += new System.EventHandler(this.lammoi_Click);
             // 
             // them
             // 
@@ -474,6 +464,24 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(337, 377);
             this.tableLayoutPanel1.TabIndex = 30;
+            // 
+            // ngaylamviec
+            // 
+            this.ngaylamviec.CustomFormat = "MM/dd/yyyy";
+            this.ngaylamviec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngaylamviec.Location = new System.Drawing.Point(104, 321);
+            this.ngaylamviec.Name = "ngaylamviec";
+            this.ngaylamviec.Size = new System.Drawing.Size(228, 22);
+            this.ngaylamviec.TabIndex = 48;
+            // 
+            // ngaysinh
+            // 
+            this.ngaysinh.CustomFormat = "MM/dd/yyyy";
+            this.ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngaysinh.Location = new System.Drawing.Point(104, 109);
+            this.ngaysinh.Name = "ngaysinh";
+            this.ngaysinh.Size = new System.Drawing.Size(228, 22);
+            this.ngaysinh.TabIndex = 48;
             // 
             // label6
             // 
@@ -526,23 +534,14 @@
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
             // 
-            // ngaysinh
+            // anh
             // 
-            this.ngaysinh.CustomFormat = "MM/dd/yyyy";
-            this.ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngaysinh.Location = new System.Drawing.Point(104, 109);
-            this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Size = new System.Drawing.Size(228, 22);
-            this.ngaysinh.TabIndex = 48;
-            // 
-            // ngaylamviec
-            // 
-            this.ngaylamviec.CustomFormat = "MM/dd/yyyy";
-            this.ngaylamviec.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngaylamviec.Location = new System.Drawing.Point(104, 321);
-            this.ngaylamviec.Name = "ngaylamviec";
-            this.ngaylamviec.Size = new System.Drawing.Size(228, 22);
-            this.ngaylamviec.TabIndex = 48;
+            this.anh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.anh.Location = new System.Drawing.Point(9, 43);
+            this.anh.Name = "anh";
+            this.anh.Size = new System.Drawing.Size(143, 130);
+            this.anh.TabIndex = 35;
+            this.anh.TabStop = false;
             // 
             // employee
             // 
@@ -565,9 +564,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.didikeshopDataSet3)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,10 +594,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button sua;
         private System.Windows.Forms.Button xoa;
-        private System.Windows.Forms.Button lammoianh;
+        private System.Windows.Forms.Button lammoi;
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox gioitinh;
@@ -621,5 +619,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chucvuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DateTimePicker ngaysinh;
         private System.Windows.Forms.DateTimePicker ngaylamviec;
+        private System.Windows.Forms.PictureBox anh;
     }
 }

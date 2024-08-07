@@ -426,7 +426,7 @@
             this.lammoianh.TabIndex = 29;
             this.lammoianh.Text = "Làm mới";
             this.lammoianh.UseVisualStyleBackColor = true;
-            this.lammoianh.Click += new System.EventHandler(this.lammoianh_Click);
+            this.lammoianh.Click += new System.EventHandler(this.lammoi_Click);
             // 
             // xoa
             // 

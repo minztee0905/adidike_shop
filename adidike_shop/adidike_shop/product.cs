@@ -260,7 +260,6 @@ namespace adidike_shop
                     exists = count > 0;
                 }
             }
-
             return exists;
         }
 
@@ -322,7 +321,6 @@ namespace adidike_shop
             loaddata();
         }
 
-
         private void sua_Click(object sender, EventArgs e)
         {
             if (CheckInput() == false)
@@ -382,7 +380,6 @@ namespace adidike_shop
             }
             loaddata();
         }
-
 
         private void xoa_Click(object sender, EventArgs e)
         {
@@ -484,7 +481,7 @@ namespace adidike_shop
 
         }
 
-        private void lammoianh_Click(object sender, EventArgs e)
+        private void lammoi_Click(object sender, EventArgs e)
         {
             id.Clear();
             tensp.Clear();
@@ -498,7 +495,6 @@ namespace adidike_shop
             gianhap.Clear();
             giaban.Clear();
             soluong.Clear();
-
         }
     }
 }
