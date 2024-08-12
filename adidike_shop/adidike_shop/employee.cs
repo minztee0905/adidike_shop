@@ -36,6 +36,8 @@ namespace adidike_shop
 
         private void employee_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'didikeshopDataSet5.employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter1.Fill(this.didikeshopDataSet5.employee);
             this.employeeTableAdapter.Fill(this.didikeshopDataSet3.employee);
             connection = new SqlConnection(str);
             connection.Open();
@@ -55,8 +57,19 @@ namespace adidike_shop
             sdt.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
             ngaylamviec.Text = dataGridView1.Rows[i].Cells[6].Value.ToString();
             chucvu.Text = dataGridView1.Rows[i].Cells[7].Value.ToString();
+
+            SqlCommand cm = new SqlCommand("select picture from employee where sdt=" + sdt.Text + "", connection);
+            string img = cm.ExecuteScalar().ToString();
+            if (img == null || img.Length == 0)
+            {
+                anh.Image = Properties.Resources.defaultImage;
+            }
+            else
+            {
+                //anhsp.Image = Image.FromFile(img);
+            }
         }
-        private bool IsIdExists(string idValue)
+        private bool IsSdtExists(string idValue)
         {
             bool exists = false;
 
@@ -74,7 +87,6 @@ namespace adidike_shop
                     exists = count > 0;
                 }
             }
-
             return exists;
         }
         private bool IsValidPhoneNumber(string phoneNumber)
@@ -91,7 +103,7 @@ namespace adidike_shop
                 MessageBox.Show("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng '0' và có đúng 10 ký tự.", "Thông báo");
                 return;
             }
-            if (IsIdExists(sdt.Text))
+            if (IsSdtExists(sdt.Text))
             {
                 MessageBox.Show("Số điện thoại này đã tồn tại, vui lòng nhập số khác", "Thông báo");
                 return;
@@ -133,8 +145,6 @@ namespace adidike_shop
             }
             loaddata();
         }
-
-
         private void xoa_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
@@ -142,7 +152,6 @@ namespace adidike_shop
             command.ExecuteNonQuery();
             loaddata();
         }
-
         private void sua_Click(object sender, EventArgs e)
         {
             if (CheckInput() == false)
@@ -166,11 +175,11 @@ namespace adidike_shop
                     imageData = ms.ToArray();
                 }
             }
-
             using (SqlCommand command = connection.CreateCommand())
             {
-                command.CommandText = "UPDATE employee (tennv, gioitinh, ngaysinh, diachi, gmail, sdt, ngaylamviec, chucvu, picture) " +
-                      "VALUES (@name, @gender, @birthdate, @address, @email, @phone, @hiredate, @position, @picture)";
+                command.CommandText = "UPDATE employee SET tennv = @name, gioitinh = @gender, ngaysinh = @birthdate, " +
+                                      "diachi = @address, gmail = @email, ngaylamviec = @hiredate, chucvu = @position, picture = @picture " +
+                                      "WHERE sdt = @phone";
 
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = tennv.Text;
                 command.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gioitinh.Text;
@@ -191,7 +200,7 @@ namespace adidike_shop
                 }
                 command.ExecuteNonQuery();
             }
-            loaddata();
+        loaddata();
         }
         bool CheckInput()
         {
@@ -226,10 +235,17 @@ namespace adidike_shop
         {
             tennv.Clear();
             gioitinh.SelectedIndex = -1;
+            ngaysinh.Value = DateTime.Now;
             diachi.Clear();
             gmail.Clear();
             sdt.Clear();
+            ngaylamviec.Value = DateTime.Now;
             chucvu.SelectedIndex = -1;
+        }
+
+        private void anh_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -107,6 +107,7 @@
             this.productTableAdapter1 = new adidike_shop.didikeshopDataSet1TableAdapters.productTableAdapter();
             this.productTableAdapter2 = new adidike_shop.didikeshopDataSet4TableAdapters.productTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.customerTableAdapter = new adidike_shop.didikeshopDataSet6TableAdapters.customerTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.anhsp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -404,6 +405,7 @@
             this.anhsp.Location = new System.Drawing.Point(9, 6);
             this.anhsp.Name = "anhsp";
             this.anhsp.Size = new System.Drawing.Size(176, 138);
+            this.anhsp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.anhsp.TabIndex = 32;
             this.anhsp.TabStop = false;
             this.anhsp.Click += new System.EventHandler(this.anhsp_Click_1);
@@ -804,6 +806,7 @@
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.FillWeight = 59.50412F;
             this.idDataGridViewTextBoxColumn1.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
@@ -812,90 +815,101 @@
             // nameDataGridViewTextBoxColumn1
             // 
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.FillWeight = 161.321F;
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Tên Sản Phẩm";
             this.nameDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.Width = 80;
+            this.nameDataGridViewTextBoxColumn1.Width = 81;
             // 
             // hangDataGridViewTextBoxColumn1
             // 
             this.hangDataGridViewTextBoxColumn1.DataPropertyName = "hang";
+            this.hangDataGridViewTextBoxColumn1.FillWeight = 112.8758F;
             this.hangDataGridViewTextBoxColumn1.HeaderText = "Hãng";
             this.hangDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.hangDataGridViewTextBoxColumn1.Name = "hangDataGridViewTextBoxColumn1";
-            this.hangDataGridViewTextBoxColumn1.Width = 60;
+            this.hangDataGridViewTextBoxColumn1.Width = 57;
             // 
             // nhasxDataGridViewTextBoxColumn1
             // 
             this.nhasxDataGridViewTextBoxColumn1.DataPropertyName = "nhasx";
+            this.nhasxDataGridViewTextBoxColumn1.FillWeight = 109.5653F;
             this.nhasxDataGridViewTextBoxColumn1.HeaderText = "Nhà Sản Xuất";
             this.nhasxDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.nhasxDataGridViewTextBoxColumn1.Name = "nhasxDataGridViewTextBoxColumn1";
-            this.nhasxDataGridViewTextBoxColumn1.Width = 60;
+            this.nhasxDataGridViewTextBoxColumn1.Width = 55;
             // 
             // theloaiDataGridViewTextBoxColumn1
             // 
             this.theloaiDataGridViewTextBoxColumn1.DataPropertyName = "theloai";
+            this.theloaiDataGridViewTextBoxColumn1.FillWeight = 106.5831F;
             this.theloaiDataGridViewTextBoxColumn1.HeaderText = "Thể Loại";
             this.theloaiDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.theloaiDataGridViewTextBoxColumn1.Name = "theloaiDataGridViewTextBoxColumn1";
-            this.theloaiDataGridViewTextBoxColumn1.Width = 60;
+            this.theloaiDataGridViewTextBoxColumn1.Width = 54;
             // 
             // colorDataGridViewTextBoxColumn1
             // 
             this.colorDataGridViewTextBoxColumn1.DataPropertyName = "color";
+            this.colorDataGridViewTextBoxColumn1.FillWeight = 86.58059F;
             this.colorDataGridViewTextBoxColumn1.HeaderText = "Màu";
             this.colorDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.colorDataGridViewTextBoxColumn1.Name = "colorDataGridViewTextBoxColumn1";
-            this.colorDataGridViewTextBoxColumn1.Width = 50;
+            this.colorDataGridViewTextBoxColumn1.Width = 44;
             // 
             // sizeDataGridViewTextBoxColumn1
             // 
             this.sizeDataGridViewTextBoxColumn1.DataPropertyName = "size";
+            this.sizeDataGridViewTextBoxColumn1.FillWeight = 85.99501F;
             this.sizeDataGridViewTextBoxColumn1.HeaderText = "Kích Thước";
             this.sizeDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.sizeDataGridViewTextBoxColumn1.Name = "sizeDataGridViewTextBoxColumn1";
-            this.sizeDataGridViewTextBoxColumn1.Width = 50;
+            this.sizeDataGridViewTextBoxColumn1.Width = 43;
             // 
             // chatlieuDataGridViewTextBoxColumn1
             // 
             this.chatlieuDataGridViewTextBoxColumn1.DataPropertyName = "chatlieu";
+            this.chatlieuDataGridViewTextBoxColumn1.FillWeight = 102.5494F;
             this.chatlieuDataGridViewTextBoxColumn1.HeaderText = "Chất Liệu";
             this.chatlieuDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.chatlieuDataGridViewTextBoxColumn1.Name = "chatlieuDataGridViewTextBoxColumn1";
-            this.chatlieuDataGridViewTextBoxColumn1.Width = 60;
+            this.chatlieuDataGridViewTextBoxColumn1.Width = 52;
             // 
             // gianhapDataGridViewTextBoxColumn1
             // 
             this.gianhapDataGridViewTextBoxColumn1.DataPropertyName = "gianhap";
+            this.gianhapDataGridViewTextBoxColumn1.FillWeight = 100.263F;
             this.gianhapDataGridViewTextBoxColumn1.HeaderText = "Giá Nhập";
             this.gianhapDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.gianhapDataGridViewTextBoxColumn1.Name = "gianhapDataGridViewTextBoxColumn1";
-            this.gianhapDataGridViewTextBoxColumn1.Width = 60;
+            this.gianhapDataGridViewTextBoxColumn1.Width = 50;
             // 
             // giabanDataGridViewTextBoxColumn1
             // 
             this.giabanDataGridViewTextBoxColumn1.DataPropertyName = "giaban";
+            this.giabanDataGridViewTextBoxColumn1.FillWeight = 98.20333F;
             this.giabanDataGridViewTextBoxColumn1.HeaderText = "Giá Bán";
             this.giabanDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.giabanDataGridViewTextBoxColumn1.Name = "giabanDataGridViewTextBoxColumn1";
-            this.giabanDataGridViewTextBoxColumn1.Width = 60;
+            this.giabanDataGridViewTextBoxColumn1.Width = 50;
             // 
             // soluongDataGridViewTextBoxColumn1
             // 
             this.soluongDataGridViewTextBoxColumn1.DataPropertyName = "soluong";
+            this.soluongDataGridViewTextBoxColumn1.FillWeight = 80.28996F;
             this.soluongDataGridViewTextBoxColumn1.HeaderText = "Số Lượng";
             this.soluongDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.soluongDataGridViewTextBoxColumn1.Name = "soluongDataGridViewTextBoxColumn1";
-            this.soluongDataGridViewTextBoxColumn1.Width = 50;
+            this.soluongDataGridViewTextBoxColumn1.Width = 40;
             // 
             // pictureDataGridViewImageColumn
             // 
             this.pictureDataGridViewImageColumn.DataPropertyName = "picture";
+            this.pictureDataGridViewImageColumn.FillWeight = 96.2691F;
             this.pictureDataGridViewImageColumn.HeaderText = "Ảnh";
             this.pictureDataGridViewImageColumn.MinimumWidth = 6;
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
-            this.pictureDataGridViewImageColumn.Width = 60;
+            this.pictureDataGridViewImageColumn.Width = 49;
             // 
             // productBindingSource2
             // 
@@ -955,6 +969,10 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
             // 
             // product
             // 
@@ -1075,6 +1093,7 @@
         private System.Windows.Forms.DataGridViewImageColumn pictureDataGridViewImageColumn;
         private System.Windows.Forms.PictureBox anhsp;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private didikeshopDataSet6TableAdapters.customerTableAdapter customerTableAdapter;
     }
 }
 

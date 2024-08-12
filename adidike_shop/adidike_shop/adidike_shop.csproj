@@ -82,6 +82,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>didikeshopDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="didikeshopDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>didikeshopDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="didikeshopDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>didikeshopDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +199,28 @@
     </None>
     <None Include="didikeshopDataSet4.xss">
       <DependentUpon>didikeshopDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="didikeshopDataSet5.xsc">
+      <DependentUpon>didikeshopDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="didikeshopDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>didikeshopDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="didikeshopDataSet5.xss">
+      <DependentUpon>didikeshopDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="didikeshopDataSet6.xsc">
+      <DependentUpon>didikeshopDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="didikeshopDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>didikeshopDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="didikeshopDataSet6.xss">
+      <DependentUpon>didikeshopDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

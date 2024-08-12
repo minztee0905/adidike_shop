@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Security.Policy;
+using System.IO;
 
 namespace adidike_shop
 {
@@ -64,18 +65,93 @@ namespace adidike_shop
             diachi.Text = dataGridView1.Rows[i].Cells[3].Value.ToString();
             gmail.Text = dataGridView1.Rows[i].Cells[4].Value.ToString();
             sdt.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
-        }
 
+            SqlCommand cm = new SqlCommand("select picture from customer where sdt=" + sdt.Text + "", connection);
+            string img = cm.ExecuteScalar().ToString();
+            if (img == null || img.Length == 0)
+            {
+                anh.Image = Properties.Resources.defaultImage;
+            }
+            else
+            {
+                //anhsp.Image = Image.FromFile(img);
+            }
+        }
+        private bool IsSdtExists(string idValue)
+        {
+            bool exists = false;
+
+            string connectionString = @"Data Source=DESKTOP-3S25R88\SQLEXPRESS;Initial Catalog=didikeshop;Integrated Security=True";
+            string query = "SELECT COUNT(1) FROM customer WHERE sdt = @sdt";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@sdt", idValue);
+
+                    int count = (int)command.ExecuteScalar();
+                    exists = count > 0;
+                }
+            }
+            return exists;
+        }
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return phoneNumber.StartsWith("0") && phoneNumber.Length == 10 && phoneNumber.All(char.IsDigit);
+        }
         private void them_Click(object sender, EventArgs e)
         {
             if (CheckInput() == false)
                 return;
 
-            command = connection.CreateCommand();
-            command.CommandText = "insert into customer values('" + tenkhachhang.Text + "','" + gioitinh.Text + "','" + ngaydangki.Text + "','" + gmail.Text + "','" + sdt.Text + "','" + diachi.Text + "')";
-            command.ExecuteNonQuery();
+            if (!IsValidPhoneNumber(sdt.Text))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng '0' và có đúng 10 ký tự.", "Thông báo");
+                return;
+            }
+            if (IsSdtExists(sdt.Text))
+            {
+                MessageBox.Show("Số điện thoại này đã tồn tại, vui lòng nhập số khác", "Thông báo");
+                return;
+            }
+
+            byte[] imageData = null;
+            if (picture.Image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    picture.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    imageData = ms.ToArray();
+                }
+            }
+
+            using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "INSERT INTO customer (tenkh, gioitinh, ngaydki, diachi, gmail, sdt, picture) " +
+                                      "VALUES (@name, @gender, @registrationDate, @address, @email, @phone, @picture)";
+
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = tenkhachhang.Text;
+                command.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gioitinh.Text;
+                command.Parameters.Add("@registrationDate", SqlDbType.NVarChar).Value = ngaydangki.Text;
+                command.Parameters.Add("@address", SqlDbType.NVarChar).Value = diachi.Text;
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = gmail.Text;
+                command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = sdt.Text;
+
+                if (imageData != null)
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = imageData;
+                }
+                else
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = DBNull.Value;
+                }
+                command.ExecuteNonQuery();
+            }
             loaddata();
         }
+
 
         private void xoa_Click(object sender, EventArgs e)
         {
@@ -90,12 +166,52 @@ namespace adidike_shop
             if (CheckInput() == false)
                 return;
 
-            command = connection.CreateCommand();
-            command.CommandText = "update customer set tenkh='" + tenkhachhang.Text + "',gioitinh='" + gioitinh.Text + "',ngaydki='" + ngaydangki.Text + "',diachi='" + diachi.Text + "',gmail='" + gmail.Text + "'" +
-                ",sdt='" + sdt.Text + "'where sdt='" + sdt.Text + "'";
-            command.ExecuteNonQuery();
+            int i = dataGridView1.CurrentRow.Index;
+            if (sdt.Text != dataGridView1.Rows[i].Cells[5].Value.ToString())
+            {
+                MessageBox.Show("Bạn không thể thay đổi số điện thoại", "Thông báo");
+                return;
+            }
+
+            // Save picture
+            byte[] imageData = null;
+            if (picture.Image != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    picture.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    imageData = ms.ToArray();
+                }
+            }
+
+            using (SqlCommand command = connection.CreateCommand())
+            {
+                command.CommandText = "UPDATE customer SET tenkh = @name, gioitinh = @gender, ngaydki = @registrationDate, " +
+                                      "diachi = @address, gmail = @email, picture = @picture " +
+                                      "WHERE sdt = @phone";
+
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = tenkhachhang.Text;
+                command.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gioitinh.Text;
+                command.Parameters.Add("@registrationDate", SqlDbType.NVarChar).Value = ngaydangki.Text;
+                command.Parameters.Add("@address", SqlDbType.NVarChar).Value = diachi.Text;
+                command.Parameters.Add("@email", SqlDbType.NVarChar).Value = gmail.Text;
+                command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = sdt.Text;
+
+                if (imageData != null)
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = imageData;
+                }
+                else
+                {
+                    command.Parameters.Add("@picture", SqlDbType.VarBinary).Value = DBNull.Value;
+                }
+
+                command.ExecuteNonQuery();
+            }
+
             loaddata();
         }
+
         bool CheckInput()
         {
             long result;
@@ -134,6 +250,16 @@ namespace adidike_shop
         private void loc_Click(object sender, EventArgs e)
         {
             LoadGridByKeyword();
+        }
+
+        private void lammoianh_Click(object sender, EventArgs e)
+        {
+            tenkhachhang.Clear();
+            gioitinh.SelectedIndex = -1;
+            ngaydangki.Value=DateTime.Now;
+            diachi.Clear();
+            gmail.Clear();
+            sdt.Clear();
         }
     }
 }
